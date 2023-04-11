@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:uno",
+    "programmer": "avrispmkii",
+    "port": "COM5",
+    "sketch": "Arduino 4X Segment Display code\\4X_Segment_Display\\4X_Segment_Display.ino"
+}
