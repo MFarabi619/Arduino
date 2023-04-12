@@ -12,7 +12,7 @@ VScode with the Arduino extension was used for development. If you're doing the 
 ![image](https://user-images.githubusercontent.com/54924158/231327984-95a65182-3c7b-4cb9-a78a-b0e8d6f90ba3.png)
 
 
-- [Tinkercad](https://www.tinkercad.com] was used for the following:
+- [Tinkercad](https://www.tinkercad.com) was used for the following:
  - Visualizing project setup.
  - Creating circuit schematic.
  - Running simulations.
