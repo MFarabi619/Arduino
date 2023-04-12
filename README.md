@@ -13,10 +13,10 @@ VScode with the Arduino extension was used for development. If you're doing the 
 
 
 - [Tinkercad](https://www.tinkercad.com) was used for the following:
- - Visualizing project setup.
- - Creating circuit schematic.
- - Running simulations.
- - Generating electrical design files (.bsd).
+  - Visualizing project setup.
+  - Creating circuit schematic.
+  - Running simulations.
+  - Generating electrical design files (.bsd).
 
 
 ## [LCD 1602](https://github.com/MFarabi619/Arduino/tree/main/LCD1602%20Display)
