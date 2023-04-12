@@ -298,34 +298,36 @@ design rules under a new name.
 <element name="RPOT10K_POTENTIOMETER1" library="Tinkercad" package="HA-06-SM065" package3d_urn="urn:adsk.eagle:package:31496083/1" value="10k" x="124.2843" y="71.3284" rot="R-90" smashed="yes"/>
 </elements>
 <signals>
+<signal name="UARDUINO_UNO__GND">
+<contactref element="ULCD_1602_DISPLAY" pad="16"/>
+<contactref element="ULCD_1602_DISPLAY" pad="5"/>
+<contactref element="ULCD_1602_DISPLAY" pad="1"/>
+<contactref element="UARDUINO_UNO_" pad="GND@0"/>
+<contactref element="UARDUINO_UNO_" pad="GND@1"/>
+<contactref element="UARDUINO_UNO_" pad="GND@2"/>
+<contactref element="RPOT10K_POTENTIOMETER4" pad="3"/>
+<contactref element="RPOT10K_POTENTIOMETER1" pad="1"/>
+<wire x1="51.8234" y1="134.8988" x2="49.2834" y2="134.8988" width="0" layer="19" extent="1-1"/>
+<wire x1="51.8234" y1="134.8988" x2="65.7934" y2="86.6388" width="0" layer="19" extent="1-1"/>
+<wire x1="49.784" y1="36.6268" x2="65.7934" y2="86.6388" width="0" layer="19" extent="1-1"/>
+<wire x1="49.784" y1="36.6268" x2="21.844" y2="36.6268" width="0" layer="19" extent="1-1"/>
+<wire x1="21.844" y1="36.6268" x2="11.684" y2="36.6268" width="0" layer="19" extent="1-1"/>
+<wire x1="65.7934" y1="86.6388" x2="121.7443" y2="73.8684" width="0" layer="19" extent="1-1"/>
+<wire x1="121.7443" y1="35.7684" x2="121.7443" y2="73.8684" width="0" layer="19" extent="1-1"/>
+</signal>
 <signal name="UARDUINO_UNO__5V">
-<contactref element="RPOT10K_POTENTIOMETER4" pad="1"/>
-<contactref element="RPOT10K_POTENTIOMETER1" pad="3"/>
 <contactref element="ULCD_1602_DISPLAY" pad="2"/>
 <contactref element="UARDUINO_UNO_" pad="5V"/>
+<contactref element="RPOT10K_POTENTIOMETER4" pad="1"/>
+<contactref element="RPOT10K_POTENTIOMETER1" pad="3"/>
 <wire x1="121.7443" y1="40.8484" x2="121.7443" y2="68.7884" width="0" layer="19" extent="1-1"/>
-<wire x1="121.7443" y1="68.7884" x2="54.3634" y2="134.8988" width="0" layer="19" extent="1-1"/>
+<wire x1="54.3634" y1="134.8988" x2="121.7443" y2="68.7884" width="0" layer="19" extent="1-1"/>
 <wire x1="14.224" y1="36.6268" x2="54.3634" y2="134.8988" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ULCD_1602_DISPLAY_LED+">
 <contactref element="ULCD_1602_DISPLAY" pad="15"/>
 <contactref element="RPOT10K_POTENTIOMETER4" pad="2"/>
 <wire x1="47.244" y1="36.6268" x2="126.8243" y2="38.3084" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="UARDUINO_UNO__GND">
-<contactref element="ULCD_1602_DISPLAY" pad="16"/>
-<contactref element="RPOT10K_POTENTIOMETER1" pad="1"/>
-<contactref element="ULCD_1602_DISPLAY" pad="5"/>
-<contactref element="ULCD_1602_DISPLAY" pad="1"/>
-<contactref element="UARDUINO_UNO_" pad="GND@0"/>
-<contactref element="UARDUINO_UNO_" pad="GND@1"/>
-<contactref element="UARDUINO_UNO_" pad="GND@2"/>
-<wire x1="51.8234" y1="134.8988" x2="49.2834" y2="134.8988" width="0" layer="19" extent="1-1"/>
-<wire x1="51.8234" y1="134.8988" x2="65.7934" y2="86.6388" width="0" layer="19" extent="1-1"/>
-<wire x1="49.784" y1="36.6268" x2="65.7934" y2="86.6388" width="0" layer="19" extent="1-1"/>
-<wire x1="49.784" y1="36.6268" x2="21.844" y2="36.6268" width="0" layer="19" extent="1-1"/>
-<wire x1="21.844" y1="36.6268" x2="11.684" y2="36.6268" width="0" layer="19" extent="1-1"/>
-<wire x1="121.7443" y1="73.8684" x2="65.7934" y2="86.6388" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UARDUINO_UNO__D12">
 <contactref element="ULCD_1602_DISPLAY" pad="4"/>
