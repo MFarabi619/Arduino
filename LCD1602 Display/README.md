@@ -4,6 +4,9 @@ This project allows the user to display text on a non-i2c LCD1602 display.
 
 ![Image of LCD 1602 circuit](https://github.com/MFarabi619/Arduino/blob/main/LCD1602%20Display/LCD%201602%20Display.png)
 
+## [Circuit Schematic](https://github.com/MFarabi619/Arduino/blob/main/LCD1602%20Display/LCD%201602%20Display.pdf)
+![image](https://user-images.githubusercontent.com/54924158/231854201-d7d78a1f-43e6-48fc-a2e0-e0e095357d30.png)
+
 ## Components:
 - Arduino Uno.
 - 1 x Green Backlight LCD 1602 (non-i2c).
@@ -17,8 +20,6 @@ This project allows the user to display text on a non-i2c LCD1602 display.
   -  5 x blue.
   -  3 x green.
   -  1 x yellow.
-
-
 
 ## Features:
 
