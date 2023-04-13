@@ -6,7 +6,10 @@ This project allows the user to display text on a non-i2c LCD1602 display.
 
 ## Components:
 - Arduino Uno.
-- 1 x LCD 1602 (non-i2c).
+- 1 x Green Backlight LCD 1602 (non-i2c).
+![image](https://user-images.githubusercontent.com/54924158/231853550-11669d95-0250-456a-99ab-8df129bfc355.png)
+![image](https://user-images.githubusercontent.com/54924158/231853680-f2f7c848-919e-4a16-9a34-0fffc8a80ac5.png)
+
 - 2 x 10k Potentiometer.
 - 18 x 3" (7.5cm) Jumper wires.
   -  6 x orange.
