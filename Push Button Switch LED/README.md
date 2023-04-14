@@ -14,6 +14,10 @@ https://user-images.githubusercontent.com/54924158/232171713-8efb37fe-c0d2-45df-
 - 1 x Arduino Mega 2560/Arduino Uno
 - 1 x Red LED
 - 2 x Push Button Switches
+
+
+![image](https://user-images.githubusercontent.com/54924158/232171820-d6178fe3-2c39-4130-a487-02f989d90e91.png)
+
 - 1 x 330Ω Resistor
 
 ## Example Wiring Diagram
