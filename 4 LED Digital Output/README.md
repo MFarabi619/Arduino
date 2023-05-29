@@ -1,6 +1,7 @@
 This project is a simple demonstration of LEDs being controlled by digital output pins from the Arduino.
 
-## [Live Demo]()
+## [Live Demo](https://photos.app.goo.gl/kbSpqQtSDE8vLa9U7)
+![Live Demo](https://photos.app.goo.gl/kbSpqQtSDE8vLa9U7)
 
 ![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/4%20LED%20Digital%20Output/4%20LED%20Digital%20Output.png)
 
