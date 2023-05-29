@@ -2,5 +2,5 @@
     "board": "arduino:avr:uno",
     "programmer": "avrispmkii",
     "port": "COM5",
-    "sketch": "Digital Input LED\\Digital Input LED.ino"
+    "sketch": "4 LED Digital Output\\4 LED Digital Output.ino"
 }
