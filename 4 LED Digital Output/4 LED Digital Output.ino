@@ -4,7 +4,7 @@ int LED2 = 4; // Use pin 4 to control the green LED
 int LED3 = 5; // Use pin 5 to control the red LED
 
 void setup(){
-    //initialize digital pin 2 to 5 as output:
+    //initialize digital pins 2 to 5 as output:
     pinMode(LED0, OUTPUT);
     pinMode(LED1, OUTPUT);
     pinMode(LED2, OUTPUT);
