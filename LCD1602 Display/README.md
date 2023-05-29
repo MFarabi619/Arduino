@@ -1,6 +1,7 @@
 This project allows the user to display text on a non-i2c LCD1602 display.
 
 ## [Live Demo](https://photos.app.goo.gl/jjY9GYRMFbdxQjPT7)
+https://user-images.githubusercontent.com/54924158/231330322-2b5b7fa4-daf5-4e01-8ea5-95d3f4cfc350.mp4
 
 ![Image of LCD 1602 circuit](https://github.com/MFarabi619/Arduino/blob/main/LCD1602%20Display/LCD%201602%20Display.png)
 
