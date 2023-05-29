@@ -1,7 +1,6 @@
 {
-    "board": "arduino:avr:mega",
+    "board": "arduino:avr:uno",
     "programmer": "avrispmkii",
-    "port": "COM9",
-    "sketch": "Digital Input LED\\Digital Input LED.ino",
-    "configuration": "cpu=atmega2560"
+    "port": "COM5",
+    "sketch": "Digital Input LED\\Digital Input LED.ino"
 }
