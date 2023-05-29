@@ -2,9 +2,9 @@ This project is a simple demonstration of LEDs being controlled by digital outpu
 
 ## [Live Demo]()
 
-![Image of Circuit]()
+![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/4%20LED%20Digital%20Output/4%20LED%20Digital%20Output.png)
 
-## [Circuit Schematic]()
+## [Circuit Schematic](https://github.com/MFarabi619/Arduino/blob/main/4%20LED%20Digital%20Output/4%20LED%20Digital%20Output.pdf)
 
 ## Components:
 - Arduino Uno.
