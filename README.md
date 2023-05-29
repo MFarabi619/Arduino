@@ -18,7 +18,6 @@ VScode with the Arduino extension was used for development. If you're doing the 
   - Running simulations.
   - Generating electrical design files (.bsd).
 
-
 ## [LCD 1602](https://github.com/MFarabi619/Arduino/tree/main/LCD1602%20Display)
 
 https://user-images.githubusercontent.com/54924158/231330322-2b5b7fa4-daf5-4e01-8ea5-95d3f4cfc350.mp4
@@ -29,7 +28,7 @@ https://user-images.githubusercontent.com/54924158/231330322-2b5b7fa4-daf5-4e01-
 
 https://github.com/MFarabi619/Arduino/assets/54924158/e07f13b3-4df9-41dc-9b0b-30ab8398520f
 
-![Image of 4 LED Digital Output](https://github.com/MFarabi619/Arduino/assets/54924158/9f2b189f-d694-4c64-9737-cdb107aea536)
+![Image of 4 LED Digital Output](https://github.com/MFarabi619/Arduino/blob/main/4%20LED%20Digital%20Output/4%20LED%20Digital%20Output.png)
 
 ## [Push Button Switch LED](https://github.com/MFarabi619/Arduino/tree/main/Push%20Button%20Switch%20LED)
 
