@@ -5,6 +5,8 @@ This project is a simple demonstration of LEDs being controlled by digital outpu
 ![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/4%20LED%20Digital%20Output/4%20LED%20Digital%20Output.png)
 
 ## [Circuit Schematic](https://github.com/MFarabi619/Arduino/blob/main/4%20LED%20Digital%20Output/4%20LED%20Digital%20Output.pdf)
+![image](https://github.com/MFarabi619/Arduino/assets/54924158/9f2b189f-d694-4c64-9737-cdb107aea536)
+
 
 ## Components:
 - Arduino Uno.
@@ -13,7 +15,7 @@ This project is a simple demonstration of LEDs being controlled by digital outpu
   - 1 x green
   - 1 x yellow
   - 1 x white
-- 5 x 3"(7.5cm) Male-Male Jumper wires/Solid Core Wires
+- Male-Male Jumper wires/Solid Core Wires
 
 ## Features:
 
