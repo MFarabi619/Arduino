@@ -6,7 +6,7 @@ This project is a simple demonstration of LEDs being controlled by digital outpu
 
 ## [Circuit Schematic]()
 
-## components:
+## Components:
 - Arduino Uno.
 - 4 x LED
   - 1 x red
