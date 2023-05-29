@@ -10,6 +10,7 @@ This project is a simple demonstration of LEDs being controlled by digital outpu
 
 ## Components:
 - Arduino Uno.
+- 4 x 330Ω resistor.
 - 4 x LED
   - 1 x red
   - 1 x green
