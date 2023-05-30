@@ -1,6 +1,7 @@
 {
-    "board": "arduino:avr:uno",
+    "board": "arduino:avr:mega",
     "programmer": "avrispmkii",
-    "port": "COM5",
-    "sketch": "4 LED Digital Output\\4 LED Digital Output.ino"
+    "port": "COM9",
+    "sketch": "Active Buzzer\\Active Buzzer.ino",
+    "configuration": "cpu=atmega2560"
 }
