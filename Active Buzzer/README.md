@@ -16,7 +16,7 @@ This project is a simple demostration of an using an Active Buzzer to make sound
 - 2 x Female-Male jumper wires
 
 ## Features:
-
+- 
 
 
 ## Learning Log:
