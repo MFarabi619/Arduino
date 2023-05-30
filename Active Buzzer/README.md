@@ -5,10 +5,10 @@ This project is a simple demonstration of using an Active Buzzer to make sounds.
 
 
 ## Wiring Diagram
-![Image of Circuit]()
+![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/Active%20Buzzer/Active%20Buzzer.png)
 
-## [Circuit Schematic]()
-![image]()
+## [Circuit Schematic](https://github.com/MFarabi619/Arduino/blob/main/Active%20Buzzer/Active%20Buzzer.pdf)
+![image](https://github.com/MFarabi619/Arduino/assets/54924158/bd6cf560-64dc-4135-9155-fe5099068334)
 
 ## Components:
 - 1 x Arduino Mega 2560 R3
