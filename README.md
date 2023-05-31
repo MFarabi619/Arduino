@@ -1,5 +1,5 @@
 # Arduino
- A collection of both major and minor projects using Arduino platforms. 
+ A collection of both major and minor projects using Arduino platforms.  
  
 ## Tooling
 VScode with the Arduino extension was used for development. If you're doing the same, ensure to do the following first:
