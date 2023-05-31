@@ -13,8 +13,7 @@ void setup()
 
 void loop()
 {
-    int pitch = analogRead(potentiometer); // reads the value of the potentiometer (value between 0 and 1023)
-    pitch = map(pitch, 0, 1023, 0, 7);     // scale it to use it with the tone function (value between 100 and 1000)
+    int pitch = analogRead(potentiometer);       // reads the value of the potentiometer (value between 0 and 1023)
+    pitch = map(pitch, 0, 1023, 0, 8);           // scale it to use it with the tone function (value between 100 and 1000)
     tone(buzzer, G_MIXOLYDIAN_SCALE[pitch % 8]); // plays the note in pitch
-    delay(500);
 }
