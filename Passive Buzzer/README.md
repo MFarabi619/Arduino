@@ -5,9 +5,9 @@ This project demonstrates the use of a passive buzzer to generate tones.
 
 
 ## Wiring Diagram
-![Image of Circuit]()
+![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/Passive%20Buzzer/Passive%20Buzzer.png)
 
-## Circuit Schematic
+## [Circuit Schematic](https://github.com/MFarabi619/Arduino/blob/main/Passive%20Buzzer/Passive%20Buzzer.pdf)
 ![image]()
 
 ## Components:
