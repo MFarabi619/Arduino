@@ -3,7 +3,6 @@ This project demonstrates the use of a servo motor.
 ## [Live Demo]()
 [comment]: # (insert video in the next line)
 
-https://github.com/MFarabi619/Arduino/assets/54924158/8576df65-09a7-49aa-8bbb-a6890fda037d
 
 
 ## Wiring Diagram
@@ -21,6 +20,7 @@ https://github.com/MFarabi619/Arduino/assets/54924158/8576df65-09a7-49aa-8bbb-a6
 
 ## Features:
 - The servo motor can be controlled by the potentiometer.
+- The servo motor can also be made to sweep side to side. The code is included. Simply comment out the potentiometer code and uncomment the sweep code.
 
 ## Learning Log:
-- Unlike mentioned in the datasheet, the servo motor turns 270 degrees, not 180.
+- 🤖

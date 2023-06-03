@@ -1,6 +1,6 @@
 This project ...
 
-## [Live Demo]()
+## Live Demo
 [comment]: # (insert video in the next line)
 
 
