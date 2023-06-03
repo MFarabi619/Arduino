@@ -2,6 +2,6 @@
     "board": "arduino:avr:mega",
     "programmer": "avrispmkii",
     "port": "COM9",
-    "sketch": "Servo Motor\\Servo Motor.ino",
+    "sketch": "Ultrasonic Sensor\\Ultrasonic Sensor.ino",
     "configuration": "cpu=atmega2560"
 }

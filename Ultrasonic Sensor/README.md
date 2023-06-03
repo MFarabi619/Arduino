@@ -1,4 +1,4 @@
-This project ...
+This project demonstrates the use of and Ultrasonic Sensor to detect distance.
 
 ## Live Demo
 [comment]: # (insert video in the next line)
