@@ -18,6 +18,8 @@ VScode with the Arduino extension was used for development. If you're doing the 
   - Running simulations.
   - Generating electrical design files (.bsd).
 
+- Tinkercad does not have an Arduino Mega2560 R3 component, it only has Arduino Uno R3. Therefore, the wiring diagrams and schematics for projects using the Mega will show the Uno. This is completely fine as the pins used are still the same, and therefore the same code will run fine on both boards.
+
 ## [LCD 1602](https://github.com/MFarabi619/Arduino/tree/main/LCD1602%20Display)
 
 https://user-images.githubusercontent.com/54924158/231330322-2b5b7fa4-daf5-4e01-8ea5-95d3f4cfc350.mp4
