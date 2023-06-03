@@ -7,7 +7,7 @@ This project demonstrates the use of a servo motor.
 ## Wiring Diagram
 ![Image of Circuit]()
 
-## Circuit Schematic
+## [Circuit Schematic]()
 ![image]()
 
 ## Components:
@@ -17,7 +17,7 @@ This project demonstrates the use of a servo motor.
 - 7 x M-M wires
 
 ## Features:
-- The servo motor can be controlled by the potentiometer
+- The servo motor can be controlled by the potentiometer.
 
 ## Learning Log:
 - 
