@@ -7,8 +7,8 @@ This project showcases the use of a Tilt Ball Switch to light up an LED.
 ## Wiring Diagram
 ![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/Passive%20Buzzer/Passive%20Buzzer.png?raw=true)
 
-## [Circuit Schematic](https://github.com/MFarabi619/Arduino/blob/main/Passive%20Buzzer/Passive%20Buzzer.pdf)
-![image]()
+## Circuit Schematic
+![image](https://github.com/MFarabi619/Arduino/blob/main/Tilt%20Ball%20Switch/Tilt%20Ball%20Switch%20Schematic.png?raw=true)
 
 ## Components:
 - 1 x Arduino Mega2560 R3
