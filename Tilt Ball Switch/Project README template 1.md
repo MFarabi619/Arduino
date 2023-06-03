@@ -1,13 +1,13 @@
 This project showcases the use of a Tilt Ball Switch to light up an LED.
 
-## [Live Demo]()
+## Live Demo
 [comment]: # (insert video in the next line)
 
 
 ## Wiring Diagram
-![Image of Circuit]()
+![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/Passive%20Buzzer/Passive%20Buzzer.png?raw=true)
 
-## [Circuit Schematic]()
+## [Circuit Schematic](https://github.com/MFarabi619/Arduino/blob/main/Passive%20Buzzer/Passive%20Buzzer.pdf)
 ![image]()
 
 ## Components:
