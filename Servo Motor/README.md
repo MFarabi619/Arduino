@@ -3,16 +3,19 @@ This project demonstrates the use of a servo motor.
 ## [Live Demo]()
 [comment]: # (insert video in the next line)
 
+https://github.com/MFarabi619/Arduino/assets/54924158/8576df65-09a7-49aa-8bbb-a6890fda037d
+
 
 ## Wiring Diagram
-![Image of Circuit]()
+![image](https://github.com/MFarabi619/Arduino/assets/54924158/9e0179b7-70b1-48e9-94dc-3e4b43386df0)
 
-## [Circuit Schematic]()
-![image]()
+## [Circuit Schematic](https://github.com/MFarabi619/Arduino/blob/main/Servo%20Motor/Servo%20Motor%20Circuit%20Schematic.pdf)
+![image](https://github.com/MFarabi619/Arduino/assets/54924158/8cde479a-755e-4aaf-84b2-755e8ae3c40f)
 
 ## Components:
 - 1 X Arduino Mega 2560 R3
 - 1 x Servo Motor(SG90)
+- 1 x Small Breadboard
 - 1 x 10K Potentiometer 
 - 7 x M-M wires
 
@@ -20,4 +23,4 @@ This project demonstrates the use of a servo motor.
 - The servo motor can be controlled by the potentiometer.
 
 ## Learning Log:
-- 
+- Unlike mentioned in the datasheet, the servo motor turns 270 degrees, not 180.
