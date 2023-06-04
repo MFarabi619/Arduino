@@ -1,25 +1,27 @@
 # Arduino
- A collection of both major and minor projects using Arduino platforms.  
+ A collection of both major and minor projects using Arduino platforms. While most of the projects right now are pretty simple and only use a few components, they act as modular pieces of documentation and code snippets than can pe put together for larger, more complex projects. The code snippets are particularly useful for testing individual modules and components.
  
 ## Tooling
-VScode with the Arduino extension was used for development. If you're doing the same, ensure to do the following first:
+While the Arduino IDEs 1 and 2 are great in their simplicity, they didn't feel very modern. So I simply used VScode with the Arduino extension for development. If you're doing the same, ensure to do the following first:
 - Set programmer to AVRISP mkII.
 - Select the sketch you wish to run.
 - Select the right board.
-- Select the right port. 
+- Select the right port. The port on your machine may be different.
 - Import the necessary libraries.
 - All options can found by doing: F1 -> type 'Arduino' to see available options. 
 ![image](https://user-images.githubusercontent.com/54924158/231327984-95a65182-3c7b-4cb9-a78a-b0e8d6f90ba3.png)
 
 
-- [Tinkercad](https://www.tinkercad.com) was used for the following:
-  - Visualizing project setup.
+- [Tinkercad](https://www.tinkercad.com) was initially used for the following:
+  - Visualizing project setup with wiring diagram.
   - Creating circuit schematic.
   - Running simulations.
   - Generating electrical design files (.bsd).
 
-- Tinkercad does not have an Arduino Mega2560 R3 component, it only has Arduino Uno R3. Therefore, the wiring diagrams and schematics for projects using the Mega will show the Uno. This is completely fine as the pins used are still the same, and therefore the same code will run fine on both boards.
+- Tinkercad does not have an Arduino Mega2560 R3 component, it only has Arduino Uno R3. Therefore, the wiring diagrams and schematics for older projects using the Mega will show the Uno. This is completely fine as the pins used are still the same, and therefore the same code will run fine on both boards.
 
+- [Fritzing](https://fritzing.org/download/) was used from the [Distance Sensor](https://github.com/MFarabi619/Arduino/tree/main/Distance%20Sensor) project onwards, as Tinkercad is missing multiple components and modules, including Arduino Mega2560.
+  
 ## [LCD 1602](https://github.com/MFarabi619/Arduino/tree/main/LCD1602%20Display)
 
 https://user-images.githubusercontent.com/54924158/231330322-2b5b7fa4-daf5-4e01-8ea5-95d3f4cfc350.mp4
