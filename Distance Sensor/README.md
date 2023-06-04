@@ -1,34 +1,41 @@
-# This project demonstrates the use of an Ultrasonic Sensor and Temperature + Humidity Sensor to measure distance.
+## This project demonstrates the use of an Ultrasonic Sensor and Temperature + Humidity Sensor to measure distance.
 
 ## Live Demo
+
+https://github.com/MFarabi619/Arduino/assets/54924158/4878dc4d-94a8-434e-9c34-66aa0a564630
+
 
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/02/HC-SR04-Ultrasonic-Sensor-Dimensions-768x750.png?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/02/HC-SR04-Ultrasonic-Sensor-Pinout.png?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/01/How-Ultrasonic-Sensor-Working-Principle-Explained-768x394.jpg?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2015/07/Ultrasonic-Sensor-Diagram.png?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/01/How-Ultrasonic-Sensor-calculates-distance-from-object-768x535.jpg?ezimgfmt=ng:webp/ngcb2)
+![image](https://circuitdigest.com/sites/default/files/inlineimages/u5/DHT22-Module-Pinout.jpg)
 
 ## Wiring Diagram
 
-![Image of Circuit]()
+![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/Distance%20Sensor/Distance%20Sensor%20Wiring%20Diagram.png?raw=true)
 
-## [Circuit Schematic]()
+## Circuit Schematic
 
-![image]()
+![image](https://github.com/MFarabi619/Arduino/blob/main/Distance%20Sensor/Distance%20Sensor%20Circuit%20Schematic.png?raw=true)
 
 ## Components
 
 - Arduino Mega2560 R3
 - HC-SR04 Ultrasonic Sensor
 - AM2302 (DHT22) SIP Packaged Temperature and Humidity Sensor
-- 1 x Blue Backlight LCD 1602 (non-i2c).
+- 2 x Blue Backlight LCD 1602 (non-i2c)
+- 2 x Push Button Switch
+- 1 x 10K Potentiometer
 - 1 x Breadboard
-- 18 x M-M Wires
+- 2 x Half Breadboard
+- M-M Wires
 
 ## Features
 
-- The distance detected by the ultrasonic sensor is shown on the LCD 1602 display.
-- While most tutorials use libraries and show the distance measured in centimeters, and does not take into account that the speed of sound is affected by the density of the air. The density of air is determined by temperature, pressure, and humidity. This project uses a temperature sensor to take those factors into account, and provide a much more accurate measurement, in millimeters to two decimal places.
+- The distance, temperature, and humidity detected by the sensors are shown on the LCD 1602 displays.
+- Most tutorials use libraries and show the distance measured in centimeters, and does not take into account that the speed of sound is affected by the density of the air. The density of air is determined by temperature, pressure, and humidity. This project uses a temperature sensor to take those factors into account, and provide a much more accurate measurement, in millimeters to two decimal places.
 - The units of display can be changed between metric and imperial by the two buttons, with the top button changing distance and the buttom button changing temperature.
 - A single potentiometer control the contrast on both LCD displays.
 

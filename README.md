@@ -22,6 +22,11 @@ While the Arduino IDEs 1 and 2 are great in their simplicity, they didn't feel v
 
 - [Fritzing](https://fritzing.org/download/) was used from the [Distance Sensor](https://github.com/MFarabi619/Arduino/tree/main/Distance%20Sensor) project onwards, as Tinkercad is missing multiple components and modules, including Arduino Mega2560.
   
+## [Distance Sensor](https://github.com/MFarabi619/Arduino/tree/main/Distance%20Sensor)
+
+https://github.com/MFarabi619/Arduino/assets/54924158/8fe3bead-c41e-4541-ba90-a2ac9c383b3b
+
+  
 ## [LCD 1602](https://github.com/MFarabi619/Arduino/tree/main/LCD1602%20Display)
 
 https://user-images.githubusercontent.com/54924158/231330322-2b5b7fa4-daf5-4e01-8ea5-95d3f4cfc350.mp4
