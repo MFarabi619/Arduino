@@ -4,6 +4,10 @@ This project demonstrates the use of and Ultrasonic Sensor to detect distance.
 [comment]: # (insert video in the next line)
 
 
+![image](https://howtomechatronics.com/wp-content/uploads/2022/02/HC-SR04-Ultrasonic-Sensor-Dimensions-768x750.png?ezimgfmt=ng:webp/ngcb2)
+![image](https://howtomechatronics.com/wp-content/uploads/2022/02/HC-SR04-Ultrasonic-Sensor-Pinout.png?ezimgfmt=ng:webp/ngcb2)
+![image](https://howtomechatronics.com/wp-content/uploads/2022/01/How-Ultrasonic-Sensor-Working-Principle-Explained-768x394.jpg?ezimgfmt=ng:webp/ngcb2)
+
 ## Wiring Diagram
 ![Image of Circuit]()
 
@@ -21,4 +25,4 @@ This project demonstrates the use of and Ultrasonic Sensor to detect distance.
 - The distance detected by the ultrasonic sensor is shown on the LCD 1602 display.
 
 ## Learning Log:
-- 🤖
+- 
