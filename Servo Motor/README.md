@@ -4,6 +4,12 @@ This project demonstrates the use of a servo motor.
 [comment]: # (insert video in the next line)
 
 
+https://github.com/MFarabi619/Arduino/assets/54924158/814f29aa-af45-4e74-a39c-6d6cc8bfc253
+
+
+https://github.com/MFarabi619/Arduino/assets/54924158/50c7830d-9980-455f-ab0e-d5dadb8f7c8a
+
+
 
 ## Wiring Diagram
 ![image](https://github.com/MFarabi619/Arduino/assets/54924158/9e0179b7-70b1-48e9-94dc-3e4b43386df0)
