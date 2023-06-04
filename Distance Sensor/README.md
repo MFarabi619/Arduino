@@ -1,4 +1,4 @@
-# This project demonstrates the use of an Ultrasonic Sensor and Temperature + Humidity Sensor to measure distance.
+## This project demonstrates the use of an Ultrasonic Sensor and Temperature + Humidity Sensor to measure distance.
 
 ## Live Demo
 
