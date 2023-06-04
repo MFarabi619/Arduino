@@ -12,11 +12,13 @@ VScode with the Arduino extension was used for development. If you're doing the 
 ![image](https://user-images.githubusercontent.com/54924158/231327984-95a65182-3c7b-4cb9-a78a-b0e8d6f90ba3.png)
 
 
-- [Tinkercad](https://www.tinkercad.com) was used for the following:
-  - Visualizing project setup.
+- [Tinkercad](https://www.tinkercad.com) was initially used for the following:
+  - Visualizing project setup with wiring diagram.
   - Creating circuit schematic.
   - Running simulations.
   - Generating electrical design files (.bsd).
+
+- [Fritzing](https://fritzing.org/download/) was used from the [Distance Sensor](https://github.com/MFarabi619/Arduino/tree/main/Distance%20Sensor) project onwards, as Tinkercad is missing multiple components and modules, including Arduino Mega2560.
 
 - Tinkercad does not have an Arduino Mega2560 R3 component, it only has Arduino Uno R3. Therefore, the wiring diagrams and schematics for projects using the Mega will show the Uno. This is completely fine as the pins used are still the same, and therefore the same code will run fine on both boards.
 
