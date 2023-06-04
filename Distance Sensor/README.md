@@ -33,7 +33,7 @@ This project demonstrates the use of an Ultrasonic Sensor and Temperature + Humi
 
 ## Learning Log:
 - If the delay within the loop is too short, the value on the LCD updates too quickly making it difficult to read. However a delay too high results in too long of wait for the value to update.
-- Using solid core wires to make neater circuits instead of using dupont wires.
+- Using solid core wires to make neater circuits instead of using dupont wires. This made the debugging experience far less tedious.
 - The degree symbol cannot be displayed on the LCD 1602 display, and I'm still trying to find out why exactly. Instead, the letter 'C' is used to represent degrees Celsius.
   - I've tried making a custom symbol using the byte array and storing it in the LCD memory, but it displays '3' instead of the degree symbol.
 - The anode pin (A) on the LCD1 is connected to LCD2 instead of taking up another arduino pin. This also eliminates 4 lines of code.
