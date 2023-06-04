@@ -21,7 +21,7 @@ https://github.com/MFarabi619/Arduino/assets/54924158/50c7830d-9980-455f-ab0e-d5
 
 ## Components:
 - 1 X Arduino Mega 2560 R3
-- 1 x Servo Motor(SG90)
+- 1 x SG90 Micro Servo Motor 
 - 1 x Small Breadboard
 - 1 x 10K Potentiometer 
 - 7 x M-M wires
@@ -31,4 +31,5 @@ https://github.com/MFarabi619/Arduino/assets/54924158/50c7830d-9980-455f-ab0e-d5
 - The servo motor can also be made to sweep side to side. The code is included. Simply comment out the potentiometer code and uncomment the sweep code.
 
 ## Learning Log:
-- 🤖
+- The position of the servo motor rotor is determined by the pulses of electricity sent to it. 
+- The SG90 servo motor has a built-in closed-loop feedback system to consistenly correct the rotor's position. It continously checks if the current angle of the rotor is different from the target angle of the rotor. A potentiometer acts as the position feedback sensor and the output shaft of the servo is mechanically connected to this potentiometer. The internal control circuit receives the voltage from the potentiometer and adjusts the motor's power to ensure it stays on the target angle. However this is a very basic mechanism and does not provide as much precision as a well-tuned PID controller.
