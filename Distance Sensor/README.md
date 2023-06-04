@@ -2,6 +2,7 @@
 
 ## Live Demo
 
+https://github.com/MFarabi619/Arduino/assets/54924158/4878dc4d-94a8-434e-9c34-66aa0a564630
 
 
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/02/HC-SR04-Ultrasonic-Sensor-Dimensions-768x750.png?ezimgfmt=ng:webp/ngcb2)
@@ -33,8 +34,8 @@
 
 ## Features
 
-- The distance detected by the ultrasonic sensor is shown on the LCD 1602 display.
-- While most tutorials use libraries and show the distance measured in centimeters, and does not take into account that the speed of sound is affected by the density of the air. The density of air is determined by temperature, pressure, and humidity. This project uses a temperature sensor to take those factors into account, and provide a much more accurate measurement, in millimeters to two decimal places.
+- The distance, temperature, and humidity detected by the sensors are shown on the LCD 1602 displays.
+- Most tutorials use libraries and show the distance measured in centimeters, and does not take into account that the speed of sound is affected by the density of the air. The density of air is determined by temperature, pressure, and humidity. This project uses a temperature sensor to take those factors into account, and provide a much more accurate measurement, in millimeters to two decimal places.
 - The units of display can be changed between metric and imperial by the two buttons, with the top button changing distance and the buttom button changing temperature.
 - A single potentiometer control the contrast on both LCD displays.
 
