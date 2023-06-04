@@ -1,8 +1,6 @@
-This project demonstrates the use of an Ultrasonic Sensor and Temperature + Humidity Sensor to measure distance.
+# This project demonstrates the use of an Ultrasonic Sensor and Temperature + Humidity Sensor to measure distance.
 
 ## Live Demo
-[comment]: # (insert video in the next line)
-
 
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/02/HC-SR04-Ultrasonic-Sensor-Dimensions-768x750.png?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/02/HC-SR04-Ultrasonic-Sensor-Pinout.png?ezimgfmt=ng:webp/ngcb2)
@@ -10,14 +8,16 @@ This project demonstrates the use of an Ultrasonic Sensor and Temperature + Humi
 ![image](https://howtomechatronics.com/wp-content/uploads/2015/07/Ultrasonic-Sensor-Diagram.png?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/01/How-Ultrasonic-Sensor-calculates-distance-from-object-768x535.jpg?ezimgfmt=ng:webp/ngcb2)
 
-
 ## Wiring Diagram
+
 ![Image of Circuit]()
 
 ## [Circuit Schematic]()
+
 ![image]()
 
-## Components:
+## Components
+
 - Arduino Mega2560 R3
 - HC-SR04 Ultrasonic Sensor
 - AM2302 (DHT22) SIP Packaged Temperature and Humidity Sensor
@@ -25,13 +25,15 @@ This project demonstrates the use of an Ultrasonic Sensor and Temperature + Humi
 - 1 x Breadboard
 - 18 x M-M Wires
 
-## Features:
+## Features
+
 - The distance detected by the ultrasonic sensor is shown on the LCD 1602 display.
 - While most tutorials use libraries and show the distance measured in centimeters, and does not take into account that the speed of sound is affected by the density of the air. The density of air is determined by temperature, pressure, and humidity. This project uses a temperature sensor to take those factors into account, and provide a much more accurate measurement, in millimeters to two decimal places.
 - The units of display can be changed between metric and imperial by the two buttons, with the top button changing distance and the buttom button changing temperature.
 - A single potentiometer control the contrast on both LCD displays.
 
-## Learning Log:
+## Learning Log
+
 - If the delay within the loop is too short, the value on the LCD updates too quickly making it difficult to read. However a delay too high results in too long of wait for the value to update.
 - Using solid core wires to make neater circuits instead of using dupont wires. This made the debugging experience far less tedious.
 - The degree symbol cannot be displayed on the LCD 1602 display, and I'm still trying to find out why exactly. Instead, the letter 'C' is used to represent degrees Celsius.
