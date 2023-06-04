@@ -2,11 +2,11 @@
  A collection of both major and minor projects using Arduino platforms.  
  
 ## Tooling
-VScode with the Arduino extension was used for development. If you're doing the same, ensure to do the following first:
+While the Arduino IDEs 1 and 2 are great in their simplicity, they didn't feel very modern. So I simply used VScode with the Arduino extension for development. If you're doing the same, ensure to do the following first:
 - Set programmer to AVRISP mkII.
 - Select the sketch you wish to run.
 - Select the right board.
-- Select the right port. 
+- Select the right port. The port on your machine may be different.
 - Import the necessary libraries.
 - All options can found by doing: F1 -> type 'Arduino' to see available options. 
 ![image](https://user-images.githubusercontent.com/54924158/231327984-95a65182-3c7b-4cb9-a78a-b0e8d6f90ba3.png)
@@ -19,8 +19,7 @@ VScode with the Arduino extension was used for development. If you're doing the 
   - Generating electrical design files (.bsd).
 
 - [Fritzing](https://fritzing.org/download/) was used from the [Distance Sensor](https://github.com/MFarabi619/Arduino/tree/main/Distance%20Sensor) project onwards, as Tinkercad is missing multiple components and modules, including Arduino Mega2560.
-
-- Tinkercad does not have an Arduino Mega2560 R3 component, it only has Arduino Uno R3. Therefore, the wiring diagrams and schematics for projects using the Mega will show the Uno. This is completely fine as the pins used are still the same, and therefore the same code will run fine on both boards.
+  - Tinkercad does not have an Arduino Mega2560 R3 component, it only has Arduino Uno R3. Therefore, the wiring diagrams and schematics for projects using the Mega will show the Uno. This is completely fine as the pins used are still the same, and therefore the same code will run fine on both boards.
 
 ## [LCD 1602](https://github.com/MFarabi619/Arduino/tree/main/LCD1602%20Display)
 
