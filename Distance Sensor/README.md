@@ -2,19 +2,22 @@
 
 ## Live Demo
 
+
+
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/02/HC-SR04-Ultrasonic-Sensor-Dimensions-768x750.png?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/02/HC-SR04-Ultrasonic-Sensor-Pinout.png?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/01/How-Ultrasonic-Sensor-Working-Principle-Explained-768x394.jpg?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2015/07/Ultrasonic-Sensor-Diagram.png?ezimgfmt=ng:webp/ngcb2)
 ![image](https://howtomechatronics.com/wp-content/uploads/2022/01/How-Ultrasonic-Sensor-calculates-distance-from-object-768x535.jpg?ezimgfmt=ng:webp/ngcb2)
+![image](https://circuitdigest.com/sites/default/files/inlineimages/u5/DHT22-Module-Pinout.jpg)
 
 ## Wiring Diagram
 
-![Image of Circuit]()
+![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/Distance%20Sensor/Distance%20Sensor%20Wiring%20Diagram.png?raw=true)
 
-## [Circuit Schematic]()
+## Circuit Schematic
 
-![image]()
+![image](https://github.com/MFarabi619/Arduino/blob/main/Distance%20Sensor/Distance%20Sensor%20Circuit%20Schematic.png?raw=true)
 
 ## Components
 
