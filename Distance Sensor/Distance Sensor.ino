@@ -35,7 +35,6 @@ int DHT_PIN = 3; // pin for DHT sensor
 #define DHTTYPE DHT22
 DHT dht(DHT_PIN, DHTTYPE);
 int temperature, humidity = 0; // Variables for temperature and humidity
-// const SPEEDOFSOUND = 0; // Speed of sound in air
 
 void setup()
 {
@@ -67,7 +66,6 @@ bool detectButton(int num)
   // Check if the button state has changed
   if (reading[num] != lastButtonState[num])
   {
-    Serial.println("Button pressed. Button pin: " + String(BUTTON_PIN[num]));
     if (reading[num] == LOW)
     {
       isButtonPressed[num] = true; // Set the button press flag
@@ -86,31 +84,13 @@ bool detectButton(int num)
   // Update the last button state for comparison in the next iteration
   lastButtonState[num] = reading[num];
 
-  Serial.println("Button state: " + String(isOn[num]));
   return isOn[num];
 }
 
 void loop()
 {
-  // Send a short 10 microsecond pulse to the trigger pin
-  digitalWrite(TRIGGER_PIN, LOW);
-  delayMicroseconds(10);
-  digitalWrite(TRIGGER_PIN, HIGH);
 
-  // Wait for pulse on echo pin
-  duration = pulseIn(ECHO_PIN, HIGH);
-
-  // Calculate distance in millimeters (mm)
-  distanceMm = duration * 0.034 / 2;
-  // Calculate distance in inches (in)
-  distanceIn = duration * 0.0133 / 2;
-
-  // Determine with button if distance is in mm or in
-  String distanceMmString = "Dist(mm): " + String(distanceMm);
-  String distanceInString = "Dist(in): " + String(distanceIn);
-  String displayDistanceString = detectButton(0) ? distanceInString : distanceMmString;
-
-  // Read temperature as Celsius (the default)
+  // Read temperature as Celsius (the default) 
   float tempCelcius = dht.readTemperature();
   float tempFahrenheit = dht.readTemperature() * 1.8 + 32.0;
 
@@ -121,14 +101,48 @@ void loop()
   String tempFahrenheitString = "Temp(F): " + String(tempFahrenheit);
   String displayTempString = !detectButton(1) ? tempCelciusString : tempFahrenheitString;
 
+  // Read humidity
+  float humidity = dht.readHumidity();
+  String humidityString = "Humidity: " + String(humidity) + "%";
+
+  // Send a short 10 microsecond pulse to the trigger pin
+  digitalWrite(TRIGGER_PIN, LOW);
+  delayMicroseconds(10);
+  digitalWrite(TRIGGER_PIN, HIGH);
+
+  // Wait for pulse on echo pin
+  duration = pulseIn(ECHO_PIN, HIGH);
+  float speedOfSound = 331.4 + 0.6 * tempCelcius + 0.0124* humidity; // Speed of sound in air
+
+  // Calculate distance in centimeters (cm)
+  float distanceCm = (speedOfSound * duration) / 20000;
+
+  // Calculate distance in millimeters (mm)
+  distanceMm = distanceCm * 10;
+  // Calculate distance in inches (in)
+  distanceIn = distanceCm / 2.54;
+
+  // Determine with button if distance is in mm or in
+  String distanceMmString = "Dist(mm): " + String(distanceMm);
+  String distanceCmString = "Dist(cm): " + String(distanceCm);
+  String distanceInString = "Dist(in): " + String(distanceIn);
+  String distanceFtString = "Dist(ft): " + String(distanceIn / 12);
+  String displayDistanceString = detectButton(0) ? distanceInString : distanceMmString;
+  String displayDistanceString2 = detectButton(0) ? distanceFtString : distanceCmString;
+
+
   // Print the measured distance, temperature, and humidity
   // Serial.print(displayDistanceString + "\n");
 
   LCD1.setCursor(0, 0);
   LCD1.print(displayDistanceString);
+  LCD1.setCursor(0, 1);
+  LCD1.print(displayDistanceString2);
   LCD2.setCursor(0, 0);
   LCD2.print(displayTempString);
-  delay(300);
+  LCD2.setCursor(0, 1);
+  LCD2.print(humidityString);
+  delay(500);
   LCD1.clear();
   LCD2.clear();
 }
