@@ -1,5 +1,5 @@
 # Arduino
- A collection of both major and minor projects using Arduino platforms.  
+ A collection of both major and minor projects using Arduino platforms. While most of the projects right now are pretty simple and only use a few components, they act as modular pieces of documentation and code snippets than can pe put together for larger, more complex projects. The code snippets are particularly useful for testing individual modules and components.
  
 ## Tooling
 While the Arduino IDEs 1 and 2 are great in their simplicity, they didn't feel very modern. So I simply used VScode with the Arduino extension for development. If you're doing the same, ensure to do the following first:
