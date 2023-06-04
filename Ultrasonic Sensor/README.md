@@ -25,4 +25,4 @@ This project demonstrates the use of and Ultrasonic Sensor to detect distance.
 - The distance detected by the ultrasonic sensor is shown on the LCD 1602 display.
 
 ## Learning Log:
-- 
+- If the delay within the loop is too short, the value on the LCD constantly updates too quickly making it difficult to read. However a delay too high results in too long of wait for the value to update.
