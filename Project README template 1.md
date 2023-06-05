@@ -11,10 +11,10 @@ This project ...
 ![image]()
 
 ## Components:
-- 
+- 1 x Arduino Mega 2560 R3
 
 ## Features:
 - 
 
 ## Learning Log:
-
+- 
