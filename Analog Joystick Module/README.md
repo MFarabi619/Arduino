@@ -1,4 +1,4 @@
-This project ...
+This project demonstrates the use of an Analog Joystick Module.
 
 ## Live Demo
 [comment]: # (insert video in the next line)
