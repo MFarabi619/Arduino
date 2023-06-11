@@ -4,7 +4,7 @@
 int RECEIVER_PIN = 11; // Input pin for receiver
 IRrecv irrecv(RECEIVER_PIN);
 decode_results results;
-    String previous = ""; // Previous value of the IR remote
+String previous = ""; // Previous value of the IR remote
 
 // LiquidCrystal(RS, E, D4, D5, D6, D7)
 // RS, E, D4, D5, D6, D7 are the LCD pins.
@@ -14,7 +14,7 @@ int BRIGHTNESS_PIN = 8;
 void setup()
 {
     pinMode(BRIGHTNESS_PIN, OUTPUT);
-    analogWrite(BRIGHTNESS_PIN, 255);
+    analogWrite(BRIGHTNESS_PIN, 100);
 
     lcd.begin(16, 2);
     lcd.clear();

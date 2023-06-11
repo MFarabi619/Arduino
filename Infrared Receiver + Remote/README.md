@@ -17,6 +17,8 @@ https://github.com/MFarabi619/Arduino/assets/54924158/3ebdb722-29e9-4874-bfde-60
 - 1 x Arduino Mega 2560 R3
 - 1 x Infrared Receiver Module
 - 1 x Infrared Remote Control
+- LCD 1602 Display (non-i2c)
+- 1 x 10k Potentiometer
 
 ## Features:
 - The Arduino can detect the signal sent by the remote control and perform an action based on the signal received.
