@@ -3,6 +3,7 @@ This project demosntrates the use of a GY521/MPU6050 3-axis Gyroscope and 3-axis
 ## Live Demo
 [comment]: # (insert video in the next line)
 
+![image](https://github.com/MFarabi619/Arduino/assets/54924158/a255b054-4fe0-4bb7-9ad9-97c09acb16e3)
 
 ## Wiring Diagram
 ![Image of Circuit]()
