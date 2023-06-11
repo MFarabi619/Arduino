@@ -6,10 +6,10 @@ This project demosntrates the use of a GY521/MPU6050 3-axis Gyroscope and 3-axis
 ![image](https://github.com/MFarabi619/Arduino/assets/54924158/a255b054-4fe0-4bb7-9ad9-97c09acb16e3)
 
 ## Wiring Diagram
-![Image of Circuit]()
+![Image of Circuit](https://github.com/MFarabi619/Arduino/blob/main/Gyroscope%20and%20Accelerometer%20sensor/Gyroscope%20and%20Accelerometer%20Sensor%20Wiring%20Diagram.png?raw=true)
 
 ## Circuit Schematic
-![image]()
+![image](https://github.com/MFarabi619/Arduino/blob/main/Gyroscope%20and%20Accelerometer%20sensor/Gyroscope%20and%20Accelerometer%20Sensor%20Circuit%20Schematic.png?raw=true)
 
 ## Components:
 - 1 x Arduino Mega 2560 R3
