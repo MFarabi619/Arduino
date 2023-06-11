@@ -17,6 +17,7 @@ This project demonstrates the use of an infrared receiver module with a remote c
 
 ## Features:
 - The Arduino can detect the signal sent by the remote control and perform an action based on the signal received.
+- The received and de-modulated hex code is displayed on the LCD screen.
 
 ## Learning Log:
 - 
