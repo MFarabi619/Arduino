@@ -2,6 +2,6 @@
     "board": "arduino:avr:mega",
     "programmer": "avrispmkii",
     "port": "COM9",
-    "sketch": "Gyroscope and Accelerometer sensor\\Gyroscope and Accelerometer sensor.ino",
+    "sketch": "Motion Sensor\\Motion Sensor.ino",
     "configuration": "cpu=atmega2560"
 }
