@@ -25,5 +25,7 @@ This project demonstrates the use of an HC-SR501 PIR Motion Sensor.
 - The sensor detects motion and can be calibrated to different distances and durations for detection.
 
 ## Learning Log:
+- PIR stands for 'Passive Infrared Sensor'. Living beings emit heat in the form of infrared radiation/light, which is detected by the sensor. It is called passive because the sensor isn't outputting any energy to detect the objects, but rather receiving emitted energy from other objects to detect them.
+- The white cover on the module is called a 'Fresnel Lens', which focuses the infrared signals onto the piezo-electric sensor. 
 - Upon receiving power, the sensor will take 1 minute to calibrate. During this time, the sensor will be very sensitive to motion and will trigger the output pin. This is normal and should be expected.
 - At the repeat trigger selector area, the pins are soldered. Not really sure how to use it.
