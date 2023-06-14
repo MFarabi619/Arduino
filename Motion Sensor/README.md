@@ -3,6 +3,10 @@ This project demonstrates the use of an HC-SR501 PIR Motion Sensor.
 ## Live Demo
 [comment]: # (insert video in the next line)
 
+
+https://github.com/MFarabi619/Arduino/assets/54924158/2912fd46-f548-4a37-a1fc-792a34e10e8b
+
+
 ![image](https://github.com/MFarabi619/Arduino/assets/54924158/38beda4c-3217-4157-b14e-236093a2a07f)
 ![image](https://github.com/MFarabi619/Arduino/assets/54924158/eb08eac8-16f4-4749-9cec-2339f13409f0)
 ![image](https://github.com/MFarabi619/Arduino/assets/54924158/f82ae13f-492d-4dcf-a9d1-b08c4fa7e94b)
