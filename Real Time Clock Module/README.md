@@ -12,7 +12,7 @@ This project demonstrates the use of a real time clock module.
 
 ## Components:
 - 1 x Arduino Mega 2560 R3
-- 1 x DS1307 Real Time Clock Module
+- 1 x DS1307/DS3231 Real Time Clock Module
 - 1 x LCD 16x2 Display
 - 1 x 10k Potentiometer
 
