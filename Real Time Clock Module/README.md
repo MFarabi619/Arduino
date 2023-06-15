@@ -3,6 +3,10 @@ This project demonstrates the use of a real time clock module.
 ## Live Demo
 [comment]: # (insert video in the next line)
 
+
+https://github.com/MFarabi619/Arduino/assets/54924158/f5984ad7-c253-4f8f-9c2c-2f9f9004bd29
+
+
 ![image](https://github.com/MFarabi619/Arduino/assets/54924158/3c8b361f-acb3-4e38-8e8a-7033c92a9d07)
 
 ## Wiring Diagram
