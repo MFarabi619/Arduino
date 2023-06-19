@@ -3,31 +3,49 @@
 # Get the directory of the script
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
-# Check if a directory name was provided as an argument
-if [ -z "$1" ]; then
-    read -p "Enter the directory name: " directory_name
-else
-    directory_name="$1"
+# Determine the location of the 'Projects' directory relative to the script's location
+projects_dir="$script_dir/../Projects"
+
+# Check if the 'Projects' directory exists
+if [ ! -d "$projects_dir" ]; then
+    echo "'Projects' directory does not exist. Please create it or modify the script."
+    exit 1
 fi
 
-# Create the directory
-mkdir -p "${script_dir}/${directory_name}"
+# Get the directory name
+read -p "Enter the directory name: " directory_name
 
-# Set permissions for the directory
-chmod 755 "${script_dir}/${directory_name}"
+# Ask if an LCD is necessary
+lcd_1602="- "
+# Function to add LCD1602 (non-i2c) display to README
+add_lcd() {
+    read -p "Do you require an LCD1602 (non-i2c) with this project? (Y/N)" choice
+    if [[ $choice == [Yy] ]]; then
+        lcd_1602=$(
+            cat <<EOF
+- 1 x LCD1602 (non-i2c)
+- 1 x 10k Potentiometer
+- 
+EOF
+        )
+    fi
+}
 
-# Create example files within the directory
-touch "${script_dir}/${directory_name}/${directory_name}.ino"
-touch "${script_dir}/${directory_name}/README.md"
+add_lcd
 
-# Set permissions for the example files
-chmod 644 "${script_dir}/${directory_name}/${directory_name}.ino"
-chmod 644 "${script_dir}/${directory_name}/README.md"
+# Create the directory inside the 'Projects' directory
+project_dir="$projects_dir/$directory_name"
+mkdir -p "$project_dir"
+
+# Create template files within the directory
+# TODO: Insert boilerplate code to .ino file. Will vary depending on LCD.
+touch "$project_dir/$directory_name.ino"
+touch "$project_dir/README.md"
 
 # Initialize README.md with content
-# readme_content="## ${directory_name} \n\nWelcome to the ${directory_name} directory!"
-
-readme_content="This project demonstrates the use of a 
+readme_content=$(
+    cat <<EOF
+This project demonstrates the use of a 
 
 ## Live Demo
 [comment]: # (insert video in the next line)
@@ -41,29 +59,32 @@ readme_content="This project demonstrates the use of a
 
 ## Components:
 - 1 x Arduino Mega 2560 R3
-- 
+$lcd_1602
 
 ## Features:
 - 
 
 ## Learning Log:
-- "
+- 
 
-echo -e "$readme_content" > "${script_dir}/${directory_name}/README.md"
+EOF
+)
+
+echo -e "$readme_content" >"$project_dir/README.md"
 
 # Function to delete the directory
 delete_directory() {
-    read -p "Are you sure you want to delete the directory '${directory_name}'? (Y/N): " choice
+    read -p "Are you sure you want to delete the directory '$directory_name'? (Y/N): " choice
     if [[ $choice == [Yy] ]]; then
-        rm -rf "${script_dir}/${directory_name}"
-        echo "Directory '${directory_name}' has been deleted."
+        rm -rf "$project_dir"
+        echo "Directory '$directory_name' has been deleted."
     else
         echo "Deletion aborted."
     fi
 }
 
 # Prompt to delete the directory if created by mistake
-read -p "Was the directory '${directory_name}' created by mistake? Do you want to delete it? (Y/N): " delete_choice
+read -p "Was the directory '$directory_name' created by mistake? Do you want to delete it? (Y/N): " delete_choice
 if [[ $delete_choice == [Yy] ]]; then
     delete_directory
 fi
