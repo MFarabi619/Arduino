@@ -25,7 +25,30 @@ chmod 644 "${script_dir}/${directory_name}/${directory_name}.ino"
 chmod 644 "${script_dir}/${directory_name}/README.md"
 
 # Initialize README.md with content
-readme_content="## ${directory_name} \n\nWelcome to the ${directory_name} directory!"
+# readme_content="## ${directory_name} \n\nWelcome to the ${directory_name} directory!"
+
+readme_content="This project demonstrates the use of a 
+
+## Live Demo
+[comment]: # (insert video in the next line)
+
+
+## Wiring Diagram
+![Image of Circuit]()
+
+## Circuit Schematic
+![image]()
+
+## Components:
+- 1 x Arduino Mega 2560 R3
+- 
+
+## Features:
+- 
+
+## Learning Log:
+- "
+
 echo -e "$readme_content" > "${script_dir}/${directory_name}/README.md"
 
 # Function to delete the directory

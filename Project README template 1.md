@@ -1,4 +1,4 @@
-This project ...
+This project demonstrates the use of a 
 
 ## Live Demo
 [comment]: # (insert video in the next line)
@@ -12,6 +12,7 @@ This project ...
 
 ## Components:
 - 1 x Arduino Mega 2560 R3
+- 
 
 ## Features:
 - 
