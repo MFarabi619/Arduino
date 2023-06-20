@@ -1,4 +1,4 @@
-## Scripts 
+# Scripts 
 
 This folder contains a bash script that I wrote from scratch to automate the process of creating a new project folder with boilerplate files.
 
