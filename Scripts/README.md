@@ -2,6 +2,8 @@
 
 This folder contains a bash script that I wrote from scratch to automate the process of creating a new project folder with boilerplate files.
 
+To run the script, ensure that you are located in the Arduino directory. Open a terminal and type `./Scripts/create_project.sh` and press enter.
+
 ## Features
 
 - Asks you what you want to name your project.
