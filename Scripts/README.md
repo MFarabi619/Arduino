@@ -19,6 +19,7 @@ There's also a Python script that uses PyAutoGUI to automate the process of gene
 
 - Opens the Fritzing file.
 - Generates .png images of wiring diagram and circuit schematic.
+- Renames the images with the project name and appended suffixes pertaining to the image.
 
 ## Learning Log for Bash Script
 
@@ -38,3 +39,9 @@ There's also a Python script that uses PyAutoGUI to automate the process of gene
 ## Learning Log for Python Script
 
 - Using the (PyAutoGUI)[https://pyautogui.readthedocs.io/en/latest/] library to automate GUI interactions using the mouse and keyboard that would otherwise be tedious.
+- Locating a image on the screen using the `locateCenterOnScreen()` function.
+- Clicking on a location on the screen using the `click()` function.
+- Keyboard shortcuts using the `hotkey()` function.
+- Keypress using the `press()` function.
+- Typing text using the `typewrite()` function.
+- Adding delay using the `sleep()` function.
