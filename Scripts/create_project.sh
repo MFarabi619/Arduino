@@ -8,7 +8,6 @@ main() {
     # Determine the location of the 'Projects' directory relative to the script's location
     projects_dir="$script_dir/../Projects"
 
-    # Check if the 'Projects' directory exists
     check_projects_directory
     get_directory_name
     ask_lcd_requirement

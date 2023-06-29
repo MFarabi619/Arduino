@@ -4,7 +4,9 @@ This folder contains a bash script that I wrote from scratch to automate the pro
 
 To run the script, ensure that you are located in the Arduino directory. Open a terminal and type `./Scripts/create_project.sh` and press enter.
 
-## Features
+There's also a Python script that uses PyAutoGUI to automate the process of generating wiring diagrams and circuit schematics from the fritzing file. To run the script, ensure that you are located in the Arduino directory. Open a terminal and type `python ./Scripts/generate_images.py` and press enter.
+
+## Features of the Bash Script
 
 - Asks you what you want to name your project.
 - Asks if you want an LCD display for your project.
@@ -13,8 +15,12 @@ To run the script, ensure that you are located in the Arduino directory. Open a 
 - Makes a copy of a Fritzing file with the project name. The LCD and breadboard inclusion depend on the your choice.
 - Provides the option to delete the folder if you wish to start over.
 
+## Features of the Python Script
 
-## Learning Log
+- Opens the Fritzing file.
+- Generates .png images of wiring diagram and circuit schematic.
+
+## Learning Log for Bash Script
 
 - Using the `cd` command to change directories.
 - Using variables in bash to store values.
@@ -28,3 +34,7 @@ To run the script, ensure that you are located in the Arduino directory. Open a 
 - Using the `>` and `>>` operators to write to a file.
 - Using the `&&` operator to run multiple commands in a single line.
 - Using bash functions to make code more readable and modular.
+
+## Learning Log for Python Script
+
+- Using the (PyAutoGUI)[https://pyautogui.readthedocs.io/en/latest/] library to automate GUI interactions using the mouse and keyboard that would otherwise be tedious.
