@@ -17,7 +17,7 @@ There's also a Python script that uses PyAutoGUI to automate the process of gene
 
 ## Features of the Python Script
 
-- Opens the Fritzing file.
+- Locates the Fritzing program on the taskbar and opens it.
 - Generates .png images of wiring diagram and circuit schematic.
 - Renames the images with the project name and appended suffixes pertaining to the image.
 
