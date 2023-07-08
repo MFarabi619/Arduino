@@ -5,7 +5,7 @@ on:
     paths-ignore:
       - '**/README.md'
     branches:
-      - test_workflow
+      - main
 
 jobs:
   update-readme:
@@ -15,18 +15,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Extract subdirectory name
-        id: extract-subdirectory
+      - name: Get previous subdirectory path
+        id: previous-subdirectory
         run: |
-          SUBDIRECTORY_NAME=$(dirname "${{ github.event_path }}")
-          SUBDIRECTORY_NAME=${SUBDIRECTORY_NAME#*/}
-          echo "Subdirectory Name: $SUBDIRECTORY_NAME"
-          echo "::set-output name=subdirectory::$SUBDIRECTORY_NAME"
+          PREVIOUS_SUBDIRECTORY=$(git log --name-only --format= -n 1 HEAD^ | grep '^Projects/' | sed -e 's#Projects/\([^/]*\)/.*#\1#' | uniq)
+          echo "Previous Subdirectory: $PREVIOUS_SUBDIRECTORY"
+          echo "::set-output name=subdirectory::$PREVIOUS_SUBDIRECTORY"
 
       - name: Find Wiring Diagram file
         id: wiring-diagram
         run: |
-          SUBDIRECTORY_NAME=${{ steps.extract-subdirectory.outputs.subdirectory }}
+          SUBDIRECTORY_NAME=${{ steps.previous-subdirectory.outputs.subdirectory }}
           DIAGRAM_PATH=$(find "Projects/$SUBDIRECTORY_NAME" -type f -name '* Wiring Diagram.png' -print -quit)
           if [[ -n "$DIAGRAM_PATH" ]]; then
             echo "Wiring Diagram Path: $DIAGRAM_PATH"
@@ -40,7 +39,7 @@ jobs:
         run: |
           DIAGRAM_PATH="${{ steps.wiring-diagram.outputs.path }}"
           DIAGRAM_NAME=$(basename "$DIAGRAM_PATH")
-          SUBDIRECTORY_NAME=${{ steps.extract-subdirectory.outputs.subdirectory }}
+          SUBDIRECTORY_NAME=${{ steps.previous-subdirectory.outputs.subdirectory }}
           README_PATH="$GITHUB_WORKSPACE/Projects/$SUBDIRECTORY_NAME/README.md"
 
           echo "Updating README in Subdirectory: $SUBDIRECTORY_NAME"
