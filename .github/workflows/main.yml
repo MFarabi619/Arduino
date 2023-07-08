@@ -18,8 +18,26 @@ jobs:
       - name: Find Subdirectory
         id: find-subdirectory
         run: |
-          # Retrieve the subdirectory name where the latest commit was made
-          SUBDIRECTORY=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -o "Projects/[^/]*" | head -1 | cut -d'/' -f2-)
+          
+          # Go to the root directory of your Git repository
+          cd "$(git rev-parse --show-toplevel)"
+
+          # Set the directory to search within
+          search_directory="Projects"
+
+          # Get the latest commit hash
+          latest_commit=$(git rev-parse HEAD)
+
+          # Find the file with the latest commit in the search directory
+          commit_file=$(git log --pretty=format: --name-only $latest_commit | grep "$search_directory/" | head -n 1)
+
+          # Extract the subdirectory name
+          subdirectory_name=$(dirname "$commit_file" | sed "s|$search_directory/||")
+
+          # Print the subdirectory name
+          echo "The latest commit was made in: $subdirectory_name"
+
+          SUBDIRECTORY="$subdirectory_name"
 
           echo "Subdirectory: $SUBDIRECTORY"
           echo "::set-output name=subdirectory::$SUBDIRECTORY"
