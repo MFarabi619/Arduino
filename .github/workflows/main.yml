@@ -19,7 +19,7 @@ jobs:
         id: find-subdirectory
         run: |
           # Retrieve the subdirectory name where the latest commit was made
-          SUBDIRECTORY=$(dirname $(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep "/Projects/[^/]*$"))
+          SUBDIRECTORY=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -o "Projects/[^/]*" | head -1 | cut -d'/' -f2-)
 
           echo "Subdirectory: $SUBDIRECTORY"
           echo "::set-output name=subdirectory::$SUBDIRECTORY"
