@@ -55,3 +55,10 @@ jobs:
           else
             echo "The space between '## Wiring Diagram' and '## Circuit Schematic' is not empty"
           fi
+
+      - name: Commit changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "<>"
+          git add .
+          git commit -m "Add Wiring Diagram to README" --author="GitHub Actions <>"
