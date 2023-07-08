@@ -1,84 +1,57 @@
-name: Update README with Wiring Diagram
+name: Add Wiring Diagram to README
 
 on:
   push:
     branches:
-      - test_workflow
+      - main
 
 jobs:
-  update-readme:
+  add-wiring-diagram:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Find Subdirectory
-        id: find-subdirectory
-        run: |
-          
-          # Go to the root directory of your Git repository
-          cd "$(git rev-parse --show-toplevel)"
-
-          # Set the directory to search within
-          search_directory="Projects"
-
-          # Get the latest commit hash
-          latest_commit=$(git rev-parse HEAD)
-
-          # Find the file with the latest commit in the search directory
-          commit_file=$(git log --pretty=format: --name-only $latest_commit | grep "$search_directory/" | head -n 1)
-
-          # Extract the subdirectory name
-          subdirectory_name=$(dirname "$commit_file" | sed "s|$search_directory/||")
-
-          # Print the subdirectory name
-          echo "The latest commit was made in: $subdirectory_name"
-
-          SUBDIRECTORY="$subdirectory_name"
-
-          echo "Subdirectory: $SUBDIRECTORY"
-          echo "::set-output name=subdirectory::$SUBDIRECTORY"
 
       - name: Find Wiring Diagram file
-        id: wiring-diagram
+        id: find-file
         run: |
-          SUBDIRECTORY=${{ steps.find-subdirectory.outputs.subdirectory }}
-          DIAGRAM_PATH=$(find "Projects/$SUBDIRECTORY" -type f -name '* Wiring Diagram.png' -print -quit)
-
-          if [[ -n "$DIAGRAM_PATH" ]]; then
-            echo "Wiring Diagram Path: $DIAGRAM_PATH"
-            echo "::set-output name=path::$DIAGRAM_PATH"
+          commit_file=$(git log --pretty=format: --name-only --diff-filter=AM HEAD -- '*Wiring Diagram.png' | head -n 1)
+          if [[ -n "$commit_file" ]]; then
+            echo "::set-output name=file::$commit_file"
           else
-            echo "No Wiring Diagram file found in the $SUBDIRECTORY subdirectory."
+            echo "No Wiring Diagram file found in the latest commit"
             exit 1
           fi
 
-      - name: Update README
+      - name: Extract subdirectory name
+        id: extract-subdirectory
         run: |
-          DIAGRAM_PATH="${{ steps.wiring-diagram.outputs.path }}"
-          SUBDIRECTORY=${{ steps.find-subdirectory.outputs.subdirectory }}
-          README_PATH="$GITHUB_WORKSPACE/Projects/$SUBDIRECTORY/README.md"
+          file_path="${{ steps.find-file.outputs.file }}"
+          subdirectory=$(dirname "$file_path")
+          echo "::set-output name=subdirectory::$subdirectory"
 
-          echo "Updating README in Subdirectory: $SUBDIRECTORY"
-          echo "Wiring Diagram Path: $DIAGRAM_PATH"
-          echo "README Path: $README_PATH"
-
-          # Generate the Markdown image tag for the Wiring Diagram
-          IMAGE_TAG="![Wiring Diagram](./$DIAGRAM_PATH)"
-
-          # Insert the image tag below the '## Wiring Diagram' line in the README file
-          sed -i '/^## Wiring Diagram/ a\'"$IMAGE_TAG" "$README_PATH"
-
-          # Print the updated README file for verification
-          cat "$README_PATH"
-
-      - name: Commit and push changes
+      - name: Check if README.md exists
+        id: check-readme
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add .
-          git commit -m "Add Wiring Diagram to README [skip ci]"
-          git push
+          subdirectory="${{ steps.extract-subdirectory.outputs.subdirectory }}"
+          readme_file="$subdirectory/README.md"
+          if [[ -f "$readme_file" ]]; then
+            echo "::set-output name=readme::$readme_file"
+          else
+            echo "README.md file not found in the subdirectory"
+            exit 1
+          fi
+
+      - name: Insert Wiring Diagram image
+        id: insert-image
+        run: |
+          readme_file="${{ steps.check-readme.outputs.readme }}"
+          if grep -qPzo '## Wiring Diagram\n\n\n## Circuit Schematic' "$readme_file"; then
+            commit_file="${{ steps.find-file.outputs.file }}"
+            image_line="![Wiring Diagram](./$(basename "$commit_file"))"
+            sed -i "/## Wiring Diagram/a$image_line" "$readme_file"
+            echo "Image file added to README.md between '## Wiring Diagram' and '## Circuit Schematic'"
+          else
+            echo "The space between '## Wiring Diagram' and '## Circuit Schematic' is not empty"
+          fi
