@@ -2,10 +2,8 @@ name: Update README with Wiring Diagram
 
 on:
   push:
-    paths-ignore:
-      - '**/README.md'
     branches:
-      - test_workflow
+      - test_workflows
 
 jobs:
   update-readme:
@@ -15,41 +13,47 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Get previous subdirectory path
-        id: previous-subdirectory
+      - name: Find Subdirectory
+        id: find-subdirectory
         run: |
-          PREVIOUS_SUBDIRECTORY=$(git log --name-only --format= -n 1 HEAD^ | grep '^Projects/' | sed -e 's#Projects/\([^/]*\)/.*#\1#' | uniq)
-          echo "Previous Subdirectory: $PREVIOUS_SUBDIRECTORY"
-          echo "::set-output name=subdirectory::$PREVIOUS_SUBDIRECTORY"
+          # Retrieve the subdirectory name where the latest commit was made
+          SUBDIRECTORY=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep -o "Projects/[^/]*/" | sed 's#Projects/\(.*\)/#\1#')
+
+          echo "Subdirectory: $SUBDIRECTORY"
+          echo "::set-output name=subdirectory::$SUBDIRECTORY"
 
       - name: Find Wiring Diagram file
         id: wiring-diagram
         run: |
-          SUBDIRECTORY_NAME=${{ steps.previous-subdirectory.outputs.subdirectory }}
-          DIAGRAM_PATH=$(find "Projects/$SUBDIRECTORY_NAME" -type f -name '* Wiring Diagram.png' -print -quit)
+          SUBDIRECTORY=${{ steps.find-subdirectory.outputs.subdirectory }}
+          DIAGRAM_PATH=$(find "Projects/$SUBDIRECTORY" -type f -name '* Wiring Diagram.png' -print -quit)
+
           if [[ -n "$DIAGRAM_PATH" ]]; then
             echo "Wiring Diagram Path: $DIAGRAM_PATH"
             echo "::set-output name=path::$DIAGRAM_PATH"
           else
-            echo "No Wiring Diagram file found in the $SUBDIRECTORY_NAME subdirectory."
+            echo "No Wiring Diagram file found in the $SUBDIRECTORY subdirectory."
             exit 1
           fi
 
       - name: Update README
         run: |
           DIAGRAM_PATH="${{ steps.wiring-diagram.outputs.path }}"
-          DIAGRAM_NAME=$(basename "$DIAGRAM_PATH")
-          SUBDIRECTORY_NAME=${{ steps.previous-subdirectory.outputs.subdirectory }}
-          README_PATH="Projects/$SUBDIRECTORY_NAME/README.md"
+          SUBDIRECTORY=${{ steps.find-subdirectory.outputs.subdirectory }}
+          README_PATH="$GITHUB_WORKSPACE/Projects/$SUBDIRECTORY/README.md"
 
-          echo "Updating README in Subdirectory: $SUBDIRECTORY_NAME"
-          echo "Wiring Diagram Name: $DIAGRAM_NAME"
+          echo "Updating README in Subdirectory: $SUBDIRECTORY"
           echo "Wiring Diagram Path: $DIAGRAM_PATH"
           echo "README Path: $README_PATH"
 
-          # Insert image below "## Wiring diagram" line
-          sed -i '/## Wiring diagram/ a\
-          \ \ \n![Wiring Diagram]('"$SUBDIRECTORY_NAME/$DIAGRAM_NAME"')' "$README_PATH"
+          # Generate the Markdown image tag for the Wiring Diagram
+          IMAGE_TAG="![Wiring Diagram](./$DIAGRAM_PATH)"
+
+          # Insert the image tag below the '## Wiring Diagram' line in the README file
+          sed -i '/^## Wiring Diagram/ a\'"$IMAGE_TAG" "$README_PATH"
+
+          # Print the updated README file for verification
+          cat "$README_PATH"
 
       - name: Commit and push changes
         run: |
