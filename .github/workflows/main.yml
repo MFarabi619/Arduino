@@ -1,0 +1,61 @@
+name: Update README with Wiring Diagram
+
+on:
+  push:
+    paths-ignore:
+      - '**/README.md'
+    branches:
+      - test_workflow
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Extract subdirectory name
+        id: extract-subdirectory
+        run: |
+          SUBDIRECTORY_NAME=$(dirname "${{ github.event_path }}")
+          SUBDIRECTORY_NAME=${SUBDIRECTORY_NAME#*/}
+          echo "Subdirectory Name: $SUBDIRECTORY_NAME"
+          echo "::set-output name=subdirectory::$SUBDIRECTORY_NAME"
+
+      - name: Find Wiring Diagram file
+        id: wiring-diagram
+        run: |
+          SUBDIRECTORY_NAME=${{ steps.extract-subdirectory.outputs.subdirectory }}
+          DIAGRAM_PATH=$(find "Projects/$SUBDIRECTORY_NAME" -type f -name '* Wiring Diagram.png' -print -quit)
+          if [[ -n "$DIAGRAM_PATH" ]]; then
+            echo "Wiring Diagram Path: $DIAGRAM_PATH"
+            echo "::set-output name=path::$DIAGRAM_PATH"
+          else
+            echo "No Wiring Diagram file found in the $SUBDIRECTORY_NAME subdirectory."
+            exit 1
+          fi
+
+      - name: Update README
+        run: |
+          DIAGRAM_PATH="${{ steps.wiring-diagram.outputs.path }}"
+          DIAGRAM_NAME=$(basename "$DIAGRAM_PATH")
+          SUBDIRECTORY_NAME=${{ steps.extract-subdirectory.outputs.subdirectory }}
+          README_PATH="$GITHUB_WORKSPACE/Projects/$SUBDIRECTORY_NAME/README.md"
+
+          echo "Updating README in Subdirectory: $SUBDIRECTORY_NAME"
+          echo "Wiring Diagram Name: $DIAGRAM_NAME"
+          echo "Wiring Diagram Path: $DIAGRAM_PATH"
+          echo "README Path: $README_PATH"
+
+          # Insert image below "## Wiring diagram" line
+          sed -i '/## Wiring diagram/ a\
+          \ \ \n![Wiring Diagram]('"$SUBDIRECTORY_NAME/$DIAGRAM_NAME"')' "$README_PATH"
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Add Wiring Diagram to README [skip ci]"
+          git push
