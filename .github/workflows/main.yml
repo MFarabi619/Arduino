@@ -3,7 +3,7 @@ name: Add Wiring Diagram to README
 on:
   push:
     branches:
-      - main
+      - test_workflow
 
 jobs:
   add-wiring-diagram:
