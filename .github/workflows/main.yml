@@ -40,7 +40,7 @@ jobs:
           DIAGRAM_PATH="${{ steps.wiring-diagram.outputs.path }}"
           DIAGRAM_NAME=$(basename "$DIAGRAM_PATH")
           SUBDIRECTORY_NAME=${{ steps.previous-subdirectory.outputs.subdirectory }}
-          README_PATH="$GITHUB_WORKSPACE/Projects/$SUBDIRECTORY_NAME/README.md"
+          README_PATH="Projects/$SUBDIRECTORY_NAME/README.md"
 
           echo "Updating README in Subdirectory: $SUBDIRECTORY_NAME"
           echo "Wiring Diagram Name: $DIAGRAM_NAME"
