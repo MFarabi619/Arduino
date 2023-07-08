@@ -3,7 +3,7 @@ name: Update README with Wiring Diagram
 on:
   push:
     branches:
-      - test_workflows
+      - test_workflow
 
 jobs:
   update-readme:
