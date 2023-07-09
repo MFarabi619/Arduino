@@ -1,4 +1,4 @@
-name: Add Wiring Diagram to README
+name: Add Wiring Diagram and Circuit Schematic to README
 
 on:
   push:
@@ -23,7 +23,6 @@ jobs:
             echo "The push is not from you. Skipping the workflow."
             exit 0
           fi
-
 
       - name: Find Wiring Diagram file
         id: find-file
@@ -66,10 +65,32 @@ jobs:
             commit_file="${{ steps.find-file.outputs.file }}"
             image_line="![Wiring Diagram](./$(basename "$commit_file"))"
             sed -i -e '/## Wiring Diagram/{:a;N;/## Circuit Schematic/!ba;N;s/\n/&&/2}' -e "s|## Circuit Schematic|$image_line\n&|" "$readme_file"
-            echo "Image file added to README.md between '## Wiring Diagram' and '## Circuit Schematic'"
+            echo "Wiring Diagram file added to README.md between '## Wiring Diagram' and '## Circuit Schematic'"
           else
             echo "The space between '## Wiring Diagram' and '## Circuit Schematic' is not empty"
           fi
+
+      - name: Find Circuit Schematic file
+        id: find-schematic-file
+        run: |
+          subdirectory="${{ steps.extract-subdirectory.outputs.subdirectory }}"
+          circuit_schematic_file=$(find "$subdirectory" -maxdepth 1 -type f -iname '*Circuit Schematic*')
+          if [[ -n "$circuit_schematic_file" ]]; then
+            echo "Circuit Schematic file found: $circuit_schematic_file"
+            echo "::set-output name=schematic_file::$circuit_schematic_file"
+          else
+            echo "No Circuit Schematic file found"
+            exit 1
+          fi
+
+      - name: Insert Circuit Schematic image
+        id: insert-schematic
+        run: |
+          readme_file="${{ steps.check-readme.outputs.readme }}"
+          circuit_schematic_file="${{ steps.find-schematic-file.outputs.schematic_file }}"
+          schematic_line="![Circuit Schematic](./$(basename "$circuit_schematic_file"))"
+          sed -i -e '/## Circuit Schematic/{:a;N;/## Components/!ba;N;s/\n/&&/2}' -e "s|## Components|$schematic_line\n\n## Components|" "$readme_file"
+          echo "Circuit Schematic file added to README.md after '## Circuit Schematic'"
 
       - name: Commit changes
         env:
@@ -78,5 +99,5 @@ jobs:
           git config --global user.name "Github Actions"
           git config --global user.email "actions@github.com"
           git add .
-          git commit -am "Add Wiring Diagram to README"
+          git commit -am "Add Wiring Diagram and Circuit Schematic to README"
           git push
