@@ -13,6 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Git
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
       - name: Find Wiring Diagram file
         id: find-file
         run: |
@@ -50,10 +55,10 @@ jobs:
         id: insert-image
         run: |
           readme_file="${{ steps.check-readme.outputs.readme }}"
-          if grep -qPzo '## Wiring Diagram\n\n\n## Circuit Schematic' "$readme_file"; then
+          if grep -qPzo '## Wiring Diagram\s*\n\s*\n\s*## Circuit Schematic' "$readme_file"; then
             commit_file="${{ steps.find-file.outputs.file }}"
             image_line="![Wiring Diagram](./$(basename "$commit_file"))"
-            sed -i "/## Wiring Diagram/a$image_line" "$readme_file"
+            sed -i -e '/## Wiring Diagram/{:a;N;/## Circuit Schematic/!ba;N;s/\n/&&/2}' -e "s|## Circuit Schematic|$image_line\n&|" "$readme_file"
             echo "Image file added to README.md between '## Wiring Diagram' and '## Circuit Schematic'"
           else
             echo "The space between '## Wiring Diagram' and '## Circuit Schematic' is not empty"
@@ -61,7 +66,5 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "<>"
           git add .
-          git commit -m "Add Wiring Diagram to README" --author="GitHub Actions <>"
+          git diff --quiet && git diff --staged --quiet || git commit -m "Add Wiring Diagram to README"
