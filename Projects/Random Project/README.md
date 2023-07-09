@@ -5,12 +5,7 @@ This project demonstrates the use of a
 
 ## Wiring Diagram
 
-
-![Wiring Diagram](./Random Project Wiring Diagram.png)
 ## Circuit Schematic
-
-
-![Circuit Schematic](./Random Project Circuit Schematic.png)
 
 ## Components:
 - 1 x Arduino Mega 2560 R3

@@ -63,7 +63,9 @@ jobs:
           readme_file="${{ steps.check-readme.outputs.readme }}"
           if grep -qPzo '## Wiring Diagram\s*\n\s*\n\s*## Circuit Schematic' "$readme_file"; then
             commit_file="${{ steps.find-file.outputs.file }}"
-            image_line="![Wiring Diagram](./$(basename "$commit_file"))"
+            image_path="./$(basename "$commit_file")"
+            image_path="${image_path// /%20}"  # Replace spaces with %20
+            image_line="![Wiring Diagram]($image_path)"
             sed -i -e '/## Wiring Diagram/{:a;N;/## Circuit Schematic/!ba;N;s/\n/&&/2}' -e "s|## Circuit Schematic|$image_line\n&|" "$readme_file"
             echo "Wiring Diagram file added to README.md between '## Wiring Diagram' and '## Circuit Schematic'"
           else
@@ -88,7 +90,9 @@ jobs:
         run: |
           readme_file="${{ steps.check-readme.outputs.readme }}"
           circuit_schematic_file="${{ steps.find-schematic-file.outputs.schematic_file }}"
-          schematic_line="![Circuit Schematic](./$(basename "$circuit_schematic_file"))"
+          schematic_path="./$(basename "$circuit_schematic_file")"
+          schematic_path="${schematic_path// /%20}"  # Replace spaces with %20
+          schematic_line="![Circuit Schematic]($schematic_path)"
           sed -i -e '/## Circuit Schematic/{:a;N;/## Components/!ba;N;s/\n/&&/2}' -e "s|## Components|$schematic_line\n\n## Components|" "$readme_file"
           echo "Circuit Schematic file added to README.md after '## Circuit Schematic'"
 
