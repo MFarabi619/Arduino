@@ -1,17 +1,18 @@
 #!/bin/bash
 
+set -x
+
 # Find Wiring Diagram file
-commit_file=$(git log --pretty=format: --name-only --diff-filter=AM HEAD -- '*Wiring Diagram.png' | head -n 1)
+commit_file=$(git log --pretty=format: --name-only --diff-filter=AM -- '**/*Wiring Diagram.png' | grep -m 1 -F 'Wiring Diagram.png')
 if [[ -n "$commit_file" ]]; then
   echo "Wiring Diagram file found: $commit_file"
 else
-  echo "No Wiring Diagram file found in the latest commit"
+  echo "No Wiring Diagram file found"
   exit 1
 fi
 
 # Extract subdirectory name
-file_path="$commit_file"
-subdirectory=$(dirname "$file_path")
+subdirectory=$(dirname "$commit_file")
 echo "Subdirectory extracted: $subdirectory"
 
 # Check if README.md exists
@@ -33,7 +34,5 @@ else
 fi
 
 # Commit changes
-# git config user.name "GitHub Actions"
-# git config user.email "<>"
 # git add .
-# git commit -m "Add Wiring Diagram to README" --author="GitHub Actions <>"
+# git diff --quiet && git diff --staged --quiet || git commit -m "Add Wiring Diagram to README"

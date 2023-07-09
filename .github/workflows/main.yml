@@ -21,7 +21,7 @@ jobs:
       - name: Find Wiring Diagram file
         id: find-file
         run: |
-          commit_file=$(git log --pretty=format: --name-only --diff-filter=AM -- '**/Wiring Diagram.png' | grep -m 1 -F 'Wiring Diagram.png')
+          commit_file=$(git log --pretty=format: --name-only --diff-filter=AM -- '**/*Wiring Diagram.png' | grep -m 1 -F 'Wiring Diagram.png')
           if [[ -n "$commit_file" ]]; then
             echo "Wiring Diagram file found: $commit_file"
             echo "::set-output name=file::$commit_file"
