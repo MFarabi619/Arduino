@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - test_workflow
+permissions:
+  contents: write
 
 jobs:
   add-wiring-diagram:
