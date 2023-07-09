@@ -55,4 +55,5 @@ There's also a Python script that uses PyAutoGUI to automate the process of gene
   - If Linux, the actions will be defined with bash commands. If Windows, the actions will be defined with Powershell commands and so on and so forth.
 - Using the `actions/checkout@v2` action to checkout the repository.
 - Fetch depth is 1 by default, which fetches the most recent commit. Setting it to 0 fetches all history.
+- Choosing the branch to checkout and run the actions on.
 - 
