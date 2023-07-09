@@ -1,0 +1,107 @@
+name: Add Wiring Diagram and Circuit Schematic to README
+
+on:
+  push:
+    branches:
+      - test_workflow
+permissions:
+  contents: write
+
+jobs:
+  add-wiring-diagram:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with: 
+          fetch-depth: 0
+        
+      - name: Check if push is from me
+        run: |
+          if [[ "${{ github.actor }}" != "MFarabi619" ]]; then
+            echo "The push is not from you. Skipping the workflow."
+            exit 0
+          fi
+
+      - name: Find Wiring Diagram file
+        id: find-file
+        run: |
+          commit_file=$(git log --pretty=format: --name-only --diff-filter=AM -- '**/*Wiring Diagram.png' | grep -m 1 -F 'Wiring Diagram.png')
+          if [[ -n "$commit_file" ]]; then
+            echo "Wiring Diagram file found: $commit_file"
+            echo "::set-output name=file::$commit_file"
+          else
+            echo "No Wiring Diagram file found"
+            exit 1
+          fi
+
+      - name: Extract subdirectory name
+        id: extract-subdirectory
+        run: |
+          file_path="${{ steps.find-file.outputs.file }}"
+          subdirectory=$(dirname "$file_path")
+          echo "Subdirectory extracted: $subdirectory"
+          echo "::set-output name=subdirectory::$subdirectory"
+
+      - name: Check if README.md exists
+        id: check-readme
+        run: |
+          subdirectory="${{ steps.extract-subdirectory.outputs.subdirectory }}"
+          readme_file="$subdirectory/README.md"
+          if [[ -f "$readme_file" ]]; then
+            echo "README.md file found: $readme_file"
+            echo "::set-output name=readme::$readme_file"
+          else
+            echo "README.md file not found in the subdirectory"
+            exit 1
+          fi
+
+      - name: Insert Wiring Diagram image
+        id: insert-image
+        run: |
+          readme_file="${{ steps.check-readme.outputs.readme }}"
+          if grep -qPzo '## Wiring Diagram\s*\n\s*\n\s*## Circuit Schematic' "$readme_file"; then
+            commit_file="${{ steps.find-file.outputs.file }}"
+            image_path="./$(basename "$commit_file")"
+            image_path="${image_path// /%20}"  # Replace spaces with %20
+            image_line="![Wiring Diagram]($image_path)"
+            sed -i -e '/## Wiring Diagram/{:a;N;/## Circuit Schematic/!ba;N;s/\n/&&/2}' -e "s|## Circuit Schematic|$image_line\n&|" "$readme_file"
+            echo "Wiring Diagram file added to README.md between '## Wiring Diagram' and '## Circuit Schematic'"
+          else
+            echo "The space between '## Wiring Diagram' and '## Circuit Schematic' is not empty"
+          fi
+
+      - name: Find Circuit Schematic file
+        id: find-schematic-file
+        run: |
+          subdirectory="${{ steps.extract-subdirectory.outputs.subdirectory }}"
+          circuit_schematic_file=$(find "$subdirectory" -maxdepth 1 -type f -iname '*Circuit Schematic*')
+          if [[ -n "$circuit_schematic_file" ]]; then
+            echo "Circuit Schematic file found: $circuit_schematic_file"
+            echo "::set-output name=schematic_file::$circuit_schematic_file"
+          else
+            echo "No Circuit Schematic file found"
+            exit 1
+          fi
+
+      - name: Insert Circuit Schematic image
+        id: insert-schematic
+        run: |
+          readme_file="${{ steps.check-readme.outputs.readme }}"
+          circuit_schematic_file="${{ steps.find-schematic-file.outputs.schematic_file }}"
+          schematic_path="./$(basename "$circuit_schematic_file")"
+          schematic_path="${schematic_path// /%20}"  # Replace spaces with %20
+          schematic_line="![Circuit Schematic]($schematic_path)"
+          sed -i -e '/## Circuit Schematic/{:a;N;/## Components/!ba;N;s/\n/&&/2}' -e "s|## Components|$schematic_line\n\n## Components|" "$readme_file"
+          echo "Circuit Schematic file added to README.md after '## Circuit Schematic'"
+
+      - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        run: |
+          git config --global user.name "Github Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -am "Add Wiring Diagram and Circuit Schematic to README"
+          git push
