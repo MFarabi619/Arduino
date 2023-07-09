@@ -5,8 +5,6 @@ This project demonstrates the use of a
 
 ## Wiring Diagram
 
-
-![Wiring Diagram](./Random Project Wiring Diagram.png)
 ## Circuit Schematic
   
 ## Components:
