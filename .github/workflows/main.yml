@@ -17,7 +17,7 @@ jobs:
         
       - name: Check if push is from me
         run: |
-          if [[ "${{ github.actor }}" != "<your-github-username>" ]]; then
+          if [[ "${{ github.actor }}" != "<MFarabi619>" ]]; then
             echo "The push is not from you. Skipping the workflow."
             exit 0
           fi
