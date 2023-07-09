@@ -9,6 +9,9 @@ This project demonstrates the use of a
 ![Wiring Diagram](./Random%20Project%20Wiring%20Diagram.png)
 ## Circuit Schematic
   
+
+![Circuit Schematic](./Random Project Circuit Schematic.png)
+
 ## Components:
 - 1 x Arduino Mega 2560 R3
 - 1 x LCD1602 (non-i2c)
