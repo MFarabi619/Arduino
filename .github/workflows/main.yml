@@ -70,3 +70,4 @@ jobs:
         run: |
           git add .
           git commit -am "Add Wiring Diagram to README"
+          git push
