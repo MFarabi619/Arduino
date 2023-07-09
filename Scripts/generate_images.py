@@ -10,7 +10,7 @@ def getInput(prompt=""):
         else: 
             print("Invalid input. Please enter 'y' or 'n'.")
 
-print("\nPlease ensure that the Fritzing program is open in fullscreen and on the correct file!\n")
+# print("\nPlease ensure that the Fritzing program is open in fullscreen and on the correct file!\n")
 
 secs_between_keys = 0.04
 projectPath = ''
