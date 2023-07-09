@@ -69,4 +69,4 @@ jobs:
       - name: Commit changes
         run: |
           git add .
-          git diff --quiet && git diff --staged --quiet || git commit -m "Add Wiring Diagram to README"
+          git commit -am "Add Wiring Diagram to README"
