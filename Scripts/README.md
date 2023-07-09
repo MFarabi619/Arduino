@@ -56,4 +56,5 @@ There's also a Python script that uses PyAutoGUI to automate the process of gene
 - Using the `actions/checkout@v2` action to checkout the repository.
 - Fetch depth is 1 by default, which fetches the most recent commit. Setting it to 0 fetches all history.
 - Choosing the branch to checkout and run the actions on.
-- 
+- Providing write permissions to the actions, and configuring it to push a commit.
+- When adding images to the README by relative path, if the file name has spaces they must be replaced with `%20`. 
