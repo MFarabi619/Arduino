@@ -6,7 +6,12 @@ This project demonstrates the use of a KY-037 High Sensitivity Sound Sensor Modu
 
 ## Wiring Diagram
 
+
+![Wiring Diagram](./Sound%20Sensor%20Module%20Wiring%20Diagram.png)
 ## Circuit Schematic
+
+
+![Circuit Schematic](./Sound%20Sensor%20Module%20Circuit%20Schematic.png)
 
 ## Components:
 - 1 x Arduino Mega 2560 R3
