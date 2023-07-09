@@ -15,7 +15,9 @@ This project demonstrates the use of a KY-037 High Sensitivity Sound Sensor Modu
 - 1 x KY-037 High Sensitivity Sound Sensor Module
 
 ## Features:
-- 
+- The Analog value of the sound level is displayed on the LCD1602.
 
 ## Learning Log:
-- 
+- The A0 Analog output provides the real time sound level in analog voltage. The higher the sound level, the higher the voltage.
+- The D0 Digital output provides a digital signal when the sound level exceeds the threshold set by the potentiometer. The threshold can be adjusted by turning the potentiometer.
+- The module turned out to be defective :(. I've tested a KS0035 microphone from keyestudio which works. I've ordered a new one from ELEGOO and will move on from this project for now.
