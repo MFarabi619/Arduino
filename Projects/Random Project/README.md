@@ -10,6 +10,9 @@ This project demonstrates the use of a
 ## Circuit Schematic
 
 
+
+![Circuit Schematic](./Random%20Project%20Circuit%20Schematic.png)
+
 ![Circuit Schematic](./Random%20Project%20Circuit%20Schematic.png)
 
 ## Components:
