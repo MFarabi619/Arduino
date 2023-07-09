@@ -3,7 +3,7 @@ name: Add Wiring Diagram and Circuit Schematic to README
 on:
   push:
     branches:
-      - test_workflow
+      - main
 permissions:
   contents: write
 
