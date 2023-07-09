@@ -12,6 +12,9 @@ This project demonstrates the use of a KY-037 High Sensitivity Sound Sensor Modu
 ## Circuit Schematic
 
 
+
+![Circuit Schematic](./Sound%20Sensor%20Module%20Circuit%20Schematic.png)
+
 ![Circuit Schematic](./Sound%20Sensor%20Module%20Circuit%20Schematic.png)
 
 ## Components:
