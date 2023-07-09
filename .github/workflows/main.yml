@@ -22,10 +22,6 @@ jobs:
             exit 0
           fi
 
-      - name: Set up Git
-        run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@mfarabi619@gmail.com"
 
       - name: Find Wiring Diagram file
         id: find-file
@@ -75,6 +71,8 @@ jobs:
 
       - name: Commit changes
         run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@mfarabi619@gmail.com"
           git add .
           git commit -am "Add Wiring Diagram to README"
           git push
