@@ -2,7 +2,8 @@ This project demonstrates the use of a KY-037 High Sensitivity Sound Sensor Modu
 
 ## Live Demo
 [comment]: # (insert video in the next line)
-!(Sound Sensor Module Pinout)[Sound%20Sensor%20Module%20Pinout.png]
+
+![Sound Sensor Module Pinout](./Sound%20Sensor%20Module%20Pinout.png)
 
 ## Wiring Diagram
 
