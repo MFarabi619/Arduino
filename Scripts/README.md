@@ -6,6 +6,8 @@ To run the script, ensure that you are located in the Arduino directory. Open a 
 
 There's also a Python script that uses PyAutoGUI to automate the process of generating wiring diagrams and circuit schematics from the fritzing file. To run the script, ensure that you are located in the Arduino directory. Open a terminal and type `python ./Scripts/generate_images.py` and press enter.
 
+There's also a Github Actions workflow that adds the Wiring Diagram and Circuit Schematic images to the README.md file of the project. The workflow is triggered when a push is made to the repository.
+
 ## Features of the Bash Script
 
 - Asks you what you want to name your project.
