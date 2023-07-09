@@ -113,9 +113,13 @@ This project demonstrates the use of a
 [comment]: # (insert video in the next line)
 
 
-## Wiring Diagram
+![ Pinout](./$directory_name%20Pinout.png)
 
+
+## Wiring Diagram
+![Wiring Diagram](./$directory_name%20Wiring%20Diagram.png)
 ## Circuit Schematic
+![Circuit Schematic](./$directory_name%20Circuit%20Schematic.png)
 
 ## Components:
 - 1 x Arduino Mega 2560 R3
