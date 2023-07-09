@@ -45,3 +45,14 @@ There's also a Python script that uses PyAutoGUI to automate the process of gene
 - Keypress using the `press()` function.
 - Typing text using the `typewrite()` function.
 - Adding delay using the `sleep()` function.
+
+## Learning Log for Github Actions
+
+- To my understanding thus far, Github Actions is merely a yaml file that contains instructions. These instructions can be triggered by events such as a push to the repository, or a pull request.
+  - Github then spins up a virutal machine to run the instructions, and then destroys the virtual machine once the instructions are completed.
+  - The virtual machine is called a runner. The runner is the host for the job. A job is a set of steps that execute on the same runner. The runner can be hosted by Github, or self-hosted. 
+  - The operating system of the runner can be Windows, Linux, or MacOS.
+  - If Linux, the actions will be defined with bash commands. If Windows, the actions will be defined with Powershell commands and so on and so forth.
+- Using the `actions/checkout@v2` action to checkout the repository.
+- Fetch depth is 1 by default, which fetches the most recent commit. Setting it to 0 fetches all history.
+- 
