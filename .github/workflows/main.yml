@@ -18,6 +18,7 @@ jobs:
         run: |
           commit_file=$(git log --pretty=format: --name-only --diff-filter=AM HEAD -- '*Wiring Diagram.png' | head -n 1)
           if [[ -n "$commit_file" ]]; then
+            echo "Wiring Diagram file found: $commit_file"
             echo "::set-output name=file::$commit_file"
           else
             echo "No Wiring Diagram file found in the latest commit"
@@ -29,6 +30,7 @@ jobs:
         run: |
           file_path="${{ steps.find-file.outputs.file }}"
           subdirectory=$(dirname "$file_path")
+          echo "Subdirectory extracted: $subdirectory"
           echo "::set-output name=subdirectory::$subdirectory"
 
       - name: Check if README.md exists
@@ -37,6 +39,7 @@ jobs:
           subdirectory="${{ steps.extract-subdirectory.outputs.subdirectory }}"
           readme_file="$subdirectory/README.md"
           if [[ -f "$readme_file" ]]; then
+            echo "README.md file found: $readme_file"
             echo "::set-output name=readme::$readme_file"
           else
             echo "README.md file not found in the subdirectory"
