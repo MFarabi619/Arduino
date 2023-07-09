@@ -21,12 +21,12 @@ jobs:
       - name: Find Wiring Diagram file
         id: find-file
         run: |
-          commit_file=$(git log --pretty=format: --name-only --diff-filter=AM HEAD -- '**/Wiring Diagram.png' | grep "$(dirname "${GITHUB_WORKSPACE}/${{ github.event.repository.name }}")" | head -n 1)
+          commit_file=$(git log --pretty=format: --name-only --diff-filter=AM -- '**/Wiring Diagram.png' | grep -m 1 -F 'Wiring Diagram.png')
           if [[ -n "$commit_file" ]]; then
             echo "Wiring Diagram file found: $commit_file"
             echo "::set-output name=file::$commit_file"
           else
-            echo "No Wiring Diagram file found in the latest commit"
+            echo "No Wiring Diagram file found"
             exit 1
           fi
 
