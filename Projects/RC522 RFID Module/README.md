@@ -1,4 +1,4 @@
-This project demonstrates the use of an RC522 RFID(Radio Frequency Identification) Module.
+This project was supposed to demonstrate the use of an RC522 RFID(Radio Frequency Identification) Module. However I could not get it working :(
 
 ## Live Demo
 
