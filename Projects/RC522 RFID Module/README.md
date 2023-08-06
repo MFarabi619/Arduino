@@ -17,12 +17,12 @@ This project was supposed to demonstrate the use of an RC522 RFID(Radio Frequenc
 - 1 x Arduino Mega 2560 R3
 - 1 x LCD1602 (non-i2c)
 - 1 x 10k Potentiometer
--
+- 1 x RC522 RFID Module
 
 ## Features
 
--
+- None
 
 ## Learning Log
 
--
+- Radio frequencies are used to transmit data between the RFID module and the RFID tag. The RFID tag could be a card, a key, etc. The RFID module is connected to the Arduino via SPI(Serial Peripheral Interface) protocol. 
