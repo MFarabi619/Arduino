@@ -1,0 +1,84 @@
+name: Update README with Wiring Diagram
+
+on:
+  push:
+    branches:
+      - test_workflow
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Find Subdirectory
+        id: find-subdirectory
+        run: |
+          
+          # Go to the root directory of your Git repository
+          cd "$(git rev-parse --show-toplevel)"
+
+          # Set the directory to search within
+          search_directory="Projects"
+
+          # Get the latest commit hash
+          latest_commit=$(git rev-parse HEAD)
+
+          # Find the file with the latest commit in the search directory
+          commit_file=$(git log --pretty=format: --name-only $latest_commit | grep "$search_directory/" | head -n 1)
+
+          # Extract the subdirectory name
+          subdirectory_name=$(dirname "$commit_file" | sed "s|$search_directory/||")
+
+          # Print the subdirectory name
+          echo "The latest commit was made in: $subdirectory_name"
+
+          SUBDIRECTORY="$subdirectory_name"
+
+          echo "Subdirectory: $SUBDIRECTORY"
+          echo "::set-output name=subdirectory::$SUBDIRECTORY"
+
+      - name: Find Wiring Diagram file
+        id: wiring-diagram
+        run: |
+          SUBDIRECTORY=${{ steps.find-subdirectory.outputs.subdirectory }}
+          DIAGRAM_PATH=$(find "Projects/$SUBDIRECTORY" -type f -name '* Wiring Diagram.png' -print -quit)
+
+          if [[ -n "$DIAGRAM_PATH" ]]; then
+            echo "Wiring Diagram Path: $DIAGRAM_PATH"
+            echo "::set-output name=path::$DIAGRAM_PATH"
+          else
+            echo "No Wiring Diagram file found in the $SUBDIRECTORY subdirectory."
+            exit 1
+          fi
+
+      - name: Update README
+        run: |
+          DIAGRAM_PATH="${{ steps.wiring-diagram.outputs.path }}"
+          SUBDIRECTORY=${{ steps.find-subdirectory.outputs.subdirectory }}
+          README_PATH="$GITHUB_WORKSPACE/Projects/$SUBDIRECTORY/README.md"
+
+          echo "Updating README in Subdirectory: $SUBDIRECTORY"
+          echo "Wiring Diagram Path: $DIAGRAM_PATH"
+          echo "README Path: $README_PATH"
+
+          # Generate the Markdown image tag for the Wiring Diagram
+          IMAGE_TAG="![Wiring Diagram](./$DIAGRAM_PATH)"
+
+          # Insert the image tag below the '## Wiring Diagram' line in the README file
+          sed -i '/^## Wiring Diagram/ a\'"$IMAGE_TAG" "$README_PATH"
+
+          # Print the updated README file for verification
+          cat "$README_PATH"
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Add Wiring Diagram to README [skip ci]"
+          git push
