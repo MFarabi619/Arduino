@@ -1,3 +1,4 @@
+#include <deprecated.h>
 #include <LiquidCrystal.h>
 
 // LiquidCrystal(RS, E, D4, D5, D6, D7)

@@ -2,6 +2,6 @@
     "board": "arduino:avr:mega",
     "programmer": "avrispmkii",
     "port": "COM9",
-    "sketch": "Projects\\Sound Sensor Module\\Sound Sensor Module.ino",
+    "sketch": "Projects\\RC522 RFID Module\\RC522 RFID Module.ino",
     "configuration": "cpu=atmega2560"
 }

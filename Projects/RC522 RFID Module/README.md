@@ -1,8 +1,8 @@
-This project demonstrates the use of an RC522 RFID(Radio Frequency Identification) Module 
+This project demonstrates the use of an RC522 RFID(Radio Frequency Identification) Module.
 
 ## Live Demo
 
-![ Pinout](./RC522 RFID Module%20Pinout.png)
+![RC522 RFID Module Pinout](./RC522 RFID Module%20Pinout.png)
 
 ## Wiring Diagram
 
