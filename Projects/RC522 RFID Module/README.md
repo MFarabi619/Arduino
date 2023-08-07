@@ -6,11 +6,11 @@ This project was supposed to demonstrate the use of an RC522 RFID(Radio Frequenc
 
 ## Wiring Diagram
 
-![Wiring Diagram](./RC522 RFID Module%20Wiring%20Diagram.png)
+![Wiring Diagram](./RC522%20RFID%20Module%20Wiring%20Diagram.png)
 
 ## Circuit Schematic
 
-![Circuit Schematic](./RC522 RFID Module%20Circuit%20Schematic.png)
+![Circuit Schematic](./RC522%20RFID%20Module%20Circuit%20Schematic.png)
 
 ## Components
 

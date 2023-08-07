@@ -22,6 +22,7 @@ This project demonstrates the use of a thermistor to measure temperature.
 ## Features
 
 - When the thermistor is pinched by the fingers, the temperature increases and the resistance of the thermistor decreases. This causes the voltage across the thermistor to increase. The Arduino measures the voltage across the thermistor and calculates the temperature using the Steinhart-Hart equation. The temperature is then displayed on the LCD.
+- The datasheet for this specific thermistor could not be found, therefore the temperature output by the Arduino is not accurate. However, changes in temperature are detected and displayed on the LCD.
 
 ## Learning Log
 
