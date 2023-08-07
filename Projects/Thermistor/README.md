@@ -2,7 +2,7 @@ This project demonstrates the use of a thermistor to measure temperature.
 
 ## Live Demo
 
-![ Pinout](./Thermistor%20Pinout.png)
+![Thermistor Pinout](./Thermistor%20Pinout.png)
 
 ## Wiring Diagram
 
