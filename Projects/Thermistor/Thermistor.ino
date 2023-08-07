@@ -4,6 +4,7 @@
 // RS, E, D4, D5, D6, D7 are the LCD pins.
 LiquidCrystal LCD(2, 3, 4, 5, 6, 7);
 int LCD_BACKLIGHT_PIN = 8; // pin for LCD backlight
+int THERMISTOR_PIN = A0;   // pin for thermistor
 
 void setup()
 {
@@ -14,11 +15,13 @@ void setup()
 
 void loop()
 {
+    int reading = analogRead(THERMISTOR_PIN);
+    Serial.println(reading);
+
     LCD.setCursor(0, 0);
-    LCD.print();
+    LCD.print("Thermistor Value: ");
     LCD.setCursor(0, 1);
-    LCD.print();
-    Serial.println();
-    delay(100);
+    LCD.print(reading);
+    delay(200);
     LCD.clear();
 }
