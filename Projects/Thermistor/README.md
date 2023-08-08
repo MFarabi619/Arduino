@@ -2,6 +2,11 @@ This project demonstrates the use of a thermistor to measure temperature.
 
 ## Live Demo
 
+
+https://github.com/MFarabi619/Arduino/assets/54924158/aa8aba5f-b6ea-4f35-91a8-b45ea5b5589a
+
+
+
 ![Thermistor Pinout](https://github.com/MFarabi619/Arduino/assets/54924158/8ae69d17-881d-44e8-978c-6a41e1b78be5)
 
 ## Wiring Diagram
