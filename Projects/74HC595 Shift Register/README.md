@@ -15,11 +15,17 @@ This project demonstrates the use of a 74HC595 Serial-In, Parallel-Out Shift Reg
 ## Components
 
 - 1 x Arduino Mega 2560 R3
--
+- 1 x 74HC595/SN74HC595N Serial-In, Parallel-Out Shift Register
+- 2 x 5 mm LED (Green)
+- 2 x 5 mm LED (Red)
+- 2 x 5 mm LED (Yellow)
+- 2 x 5 mm LED (Blue)
+- 8 x 220 Ω Resistor
 
 ## Features
 
--
+- The 74HC595 Shift Register is used to control 8 LED's using only 3 pins on the Arduino. 
+- The LED's light up one at a time, in a sequence, from left to right. When all 8 LED's are lit, they all turn off and the sequence starts over again.
 
 ## Learning Log
 
