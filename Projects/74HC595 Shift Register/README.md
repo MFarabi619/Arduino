@@ -6,11 +6,11 @@ This project demonstrates the use of a 74HC595 Serial-In, Parallel-Out Shift Reg
 
 ## Wiring Diagram
 
-![Wiring Diagram](./74HC595 Shift Register%20Wiring%20Diagram.png)
+![Wiring Diagram](./74HC595%20Shift%20Register%20Wiring%20Diagram.png)
 
 ## Circuit Schematic
 
-![Circuit Schematic](./74HC595 Shift Register%20Circuit%20Schematic.png)
+![Circuit Schematic](./74HC595%20Shift%20Register%20Circuit%20Schematic.png)
 
 ## Components
 
