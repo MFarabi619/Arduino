@@ -1,4 +1,4 @@
-This project demonstrates the use of a 74HC595 Serial-In, Parallel-Out Shift Register to control 8 LEDs. The purpose of a shift register is to reduce the number of pins required to control multiple devices. In this case, the shift register is used to control 8 LED's, but only 3 pins are used on the Arduino. 
+This project demonstrates the use of a 74HC595 Serial-In, Parallel-Out Shift Register to control 8 LEDs. The purpose of a shift register is to reduce the number of pins required to control multiple devices. In this case, the shift register is used to control 8 LED's, but only 3 pins are used on the Arduino.
 
 ## Live Demo
 
