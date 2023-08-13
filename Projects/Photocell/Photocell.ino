@@ -25,6 +25,6 @@ void loop()
 
     Serial.println(photocellValue); // Print the value to the serial monitor
 
-    delay(1000);                   // Wait for a second
+    delay(200);                   // Wait for 200 ms
     LCD.clear();                   // Clear the display
 }
