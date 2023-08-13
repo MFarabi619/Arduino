@@ -2,6 +2,6 @@
     "board": "arduino:avr:mega",
     "programmer": "avrispmkii",
     "port": "COM9",
-    "sketch": "Projects\\74HC595 Shift Register\\74HC595 Shift Register.ino",
+    "sketch": "Projects\\Photocell\\Photocell.ino",
     "configuration": "cpu=atmega2560"
 }
