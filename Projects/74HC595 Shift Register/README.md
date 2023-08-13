@@ -2,7 +2,13 @@ This project demonstrates the use of a 74HC595 Serial-In, Parallel-Out Shift Reg
 
 ## Live Demo
 
-![74HC595 Shift Register Pinout](./74HC595 Shift Register%20Pinout.png)
+
+https://github.com/MFarabi619/Arduino/assets/54924158/65296ceb-366b-4fb3-b2e9-f9df6e3dc8b3
+
+
+![image](https://github.com/MFarabi619/Arduino/assets/54924158/dd6aad0f-a4f6-443d-814b-4360357319dc)
+![image](https://github.com/MFarabi619/Arduino/assets/54924158/d5d8ffcf-d98c-4cb1-a6ba-1dfc71723937)
+
 
 ## Wiring Diagram
 
