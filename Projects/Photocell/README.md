@@ -2,6 +2,7 @@ This project demonstrates the use of a photocell, also known as a photoresistor,
 
 ## Live Demo
 
+https://github.com/MFarabi619/Arduino/assets/54924158/2609c66f-19f2-4c51-a4ad-1a55ce264cfa
 
 ## Wiring Diagram
 
