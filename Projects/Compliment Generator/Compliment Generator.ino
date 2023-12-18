@@ -14,45 +14,40 @@ void setup() {
 }
 
 void loop() {
-    if (!isScrolling && digitalRead(btnPrevious) == LOW) {
-        if (firstPress) {
-            showLevelInfo();
-            firstPress = false;
-        }
-        else{
-        Serial.println(currentComplimentIndex);
-        updateDisplay();
-        currentComplimentIndex = (currentComplimentIndex - 1 + complimentsPerLevel) % complimentsPerLevel;
-        delay(200);
-    }
-    }
-
-    if (!isScrolling && digitalRead(btnNext) == LOW) {
-        if (firstPress) {
-            showLevelInfo();
-            firstPress = false;
-        }
-        else{
-        Serial.println(currentComplimentIndex);
-        updateDisplay();
-        currentComplimentIndex = (currentComplimentIndex + 1) % complimentsPerLevel;
-        delay(200);
-        }
-    }
-
-    if (digitalRead(btnLevel) == LOW) {
-        if (firstPress) {
-            showLevelInfo();
-            firstPress = false;
-        }
-        else{
-        currentLevel = (currentLevel + 1) % levels;
-        currentComplimentIndex = 0;
-        Serial.println(currentLevel);
+if (digitalRead(btnPrevious) == LOW) {
+    if (firstPress) {
         showLevelInfo();
-        delay(1000);
-        }
+        firstPress = false;
+    } else {
+        currentComplimentIndex = (currentComplimentIndex - 1 + complimentsPerLevel) % complimentsPerLevel;
+        Serial.println(currentComplimentIndex);
+        updateDisplay();
     }
+}
+
+if (digitalRead(btnNext) == LOW) {
+    if (firstPress) {
+        showLevelInfo();
+        firstPress = false;
+    } else {
+        currentComplimentIndex = (currentComplimentIndex + 1) % complimentsPerLevel;
+        Serial.println(currentComplimentIndex);
+        updateDisplay();
+    }
+}
+
+if (digitalRead(btnLevel) == LOW) {
+    if (firstPress) {
+        showLevelInfo();
+        firstPress = false;
+    } else {
+        currentLevel = (currentLevel + 1) % levels;
+        Serial.println(currentLevel);
+        currentComplimentIndex = -1;
+        showLevelInfo();
+        delay(500);
+    }
+}
 }
 
 void updateDisplay() {

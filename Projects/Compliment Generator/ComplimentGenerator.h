@@ -21,9 +21,9 @@ const int levels = 3; // Total number of levels
 const int complimentsPerLevel = 9; // Compliments per level
 
 int currentLevel = 0;
-int currentComplimentIndex = 0;
+int currentComplimentIndex = -1; // Set to -1 so that first press increments to first compliment
 bool isScrolling = false;
 
-const int textDelay = 400; // Time in milliseconds to delay between words
+const int textDelay = 300; // Time in milliseconds to delay between words
 
 #endif // COMPLIMENT_GENERATOR.H
