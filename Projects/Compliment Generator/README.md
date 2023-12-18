@@ -13,10 +13,11 @@ This project demonstrates the use of a
 ![Circuit Schematic](./Compliment Generator%20Circuit%20Schematic.png)
 
 ## Components:
-- 1 x Arduino Mega 2560 R3
+- 1 x Arduino Uno
 - 1 x LCD1602 (non-i2c)
-- 1 x 10k Potentiometer
-- 
+- 2 x 10k Potentiometer
+- 3 x Push Buttons
+- Jumper Wires
 
 ## Features:
 - 
