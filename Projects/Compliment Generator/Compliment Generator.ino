@@ -1,5 +1,7 @@
 #include "ComplimentGenerator.h"
 
+bool firstPress = true;
+
 void setup() {
     Serial.begin(9600);
     LCD.begin(16, 2);
@@ -13,26 +15,43 @@ void setup() {
 
 void loop() {
     if (!isScrolling && digitalRead(btnPrevious) == LOW) {
+        if (firstPress) {
+            showLevelInfo();
+            firstPress = false;
+        }
+        else{
         Serial.println(currentComplimentIndex);
         updateDisplay();
         currentComplimentIndex = (currentComplimentIndex - 1 + complimentsPerLevel) % complimentsPerLevel;
         delay(200);
     }
+    }
 
     if (!isScrolling && digitalRead(btnNext) == LOW) {
+        if (firstPress) {
+            showLevelInfo();
+            firstPress = false;
+        }
+        else{
         Serial.println(currentComplimentIndex);
         updateDisplay();
         currentComplimentIndex = (currentComplimentIndex + 1) % complimentsPerLevel;
         delay(200);
+        }
     }
 
     if (digitalRead(btnLevel) == LOW) {
+        if (firstPress) {
+            showLevelInfo();
+            firstPress = false;
+        }
+        else{
         currentLevel = (currentLevel + 1) % levels;
         currentComplimentIndex = 0;
         Serial.println(currentLevel);
         showLevelInfo();
         delay(1000);
-        LCD.clear();
+        }
     }
 }
 
@@ -90,8 +109,6 @@ void displayWrappedText(const char* text) {
     }
 }
 
-
-
 void showLevelInfo() {
     LCD.clear();
     LCD.setCursor(0, 0);
@@ -104,8 +121,7 @@ void showLevelInfo() {
             displayWrappedText("Level 2: Welcome to Rizztown ;)");
             break;
         case 2:
-            displayWrappedText("Level 3: You asked for it o.O");
+            displayWrappedText("Level 3: You asked for it...");
             break;
     }
-    delay(1000);
 }
