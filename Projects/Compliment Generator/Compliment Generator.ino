@@ -1,4 +1,5 @@
 #include "ComplimentGenerator.h"
+const int textDelay = 300; // Time in milliseconds to delay between words
 
 void setup() {
     Serial.begin(9600);
@@ -8,7 +9,7 @@ void setup() {
     pinMode(btnNext, INPUT_PULLUP);
     pinMode(btnLevel, INPUT_PULLUP);
 
-    displayWrappedText("Press to be rizzed :)", 300);
+    displayWrappedText("Press to be rizzed :)");
 }
 
 void loop() {
@@ -39,71 +40,72 @@ void loop() {
 void updateDisplay() {
     isScrolling = true;
     LCD.clear();
-    displayWrappedText(compliments[currentLevel][currentComplimentIndex], 300);
+    displayWrappedText(compliments[currentLevel][currentComplimentIndex]);
     isScrolling = false;
 }
 
-void displayWrappedText(const char* text, int delayTime) {
+void displayWrappedText(const char* text) {
     int len = strlen(text);
-    int pos = 0;
-    int line = 0;
-    int cursorPos = 0;
-    LCD.clear();
+    char line1[17], line2[17];
+    memset(line1, ' ', 16); line1[16] = '\0';
+    memset(line2, ' ', 16); line2[16] = '\0';
+    int line1Pos = 0, line2Pos = 0;
 
-    while (pos < len) {
-        int nextSpace = pos;
-        while (nextSpace < len && text[nextSpace] != ' ') nextSpace++;
-        
-        if (cursorPos + (nextSpace - pos) > 16 && cursorPos > 0) {
-            line++;
-            cursorPos = 0;
-            if (line > 1) {
-                delay(delayTime);
-                LCD.clear();
-                line = 0;
+    for (int pos = 0; pos < len; pos++) {
+        // Find the end of the current word
+        int wordEnd = pos;
+        while (wordEnd < len && text[wordEnd] != ' ' && text[wordEnd] != '\n') {
+            wordEnd++;
+        }
+
+        // Check if the word fits in the current line
+        int wordLen = wordEnd - pos;
+        if (line2Pos + wordLen > 16) {
+            // Shift line2 to line1 and clear line2
+            strncpy(line1, line2, 17);
+            memset(line2, ' ', 16); line2[16] = '\0';
+            line2Pos = 0;
+        }
+
+        // Print the word
+        while (pos < wordEnd) {
+            if (line2Pos < 16) {
+                line2[line2Pos++] = text[pos];
             }
+            pos++;
         }
 
-        LCD.setCursor(cursorPos, line);
-        while (pos < nextSpace) {
-            LCD.print(text[pos++]);
-            cursorPos++;
+        // Add a space after the word if there's space and it's not the end
+        if (line2Pos < 16 && pos < len) {
+            line2[line2Pos++] = ' ';
         }
 
-        if (pos < len) {
-            LCD.print(' ');
-            cursorPos++;
-            if (cursorPos >= 16) {
-                line++;
-                cursorPos = 0;
-                if (line > 1) {
-                    delay(delayTime);
-                    LCD.clear();
-                    line = 0;
-                }
-            }
-        }
-        pos++;
+        // Update the LCD
+        LCD.clear();
+        LCD.setCursor(0, 0);
+        LCD.print(line1);
+        LCD.setCursor(0, 1);
+        LCD.print(line2);
+
+        delay(textDelay); // Delay for readability
     }
-    delay(delayTime);
 }
+
 
 
 void showLevelInfo() {
     LCD.clear();
     LCD.setCursor(0, 0);
-    LCD.print("Level: ");
     LCD.print(currentLevel + 1);
-    LCD.setCursor(0, 1);
     switch (currentLevel) {
         case 0:
-            LCD.print("Nice & romantic :)");
+            displayWrappedText("Level 1: Nice & romantic :)");
             break;
         case 1:
-            LCD.print("Welcome to Rizztown ;)");
+            displayWrappedText("Level 2: Welcome to Rizztown ;)");
             break;
         case 2:
-            LCD.print("You asked for it o.O");
+            displayWrappedText("Level 3: You asked for it o.O");
             break;
     }
     delay(1000);
