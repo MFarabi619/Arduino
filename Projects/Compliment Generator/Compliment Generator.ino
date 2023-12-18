@@ -1,5 +1,4 @@
 #include "ComplimentGenerator.h"
-const int textDelay = 300; // Time in milliseconds to delay between words
 
 void setup() {
     Serial.begin(9600);
@@ -9,21 +8,21 @@ void setup() {
     pinMode(btnNext, INPUT_PULLUP);
     pinMode(btnLevel, INPUT_PULLUP);
 
-    displayWrappedText("Press to be rizzed :)");
+    displayWrappedText("Press a button to be rizzed :)");
 }
 
 void loop() {
     if (!isScrolling && digitalRead(btnPrevious) == LOW) {
-        currentComplimentIndex = (currentComplimentIndex - 1 + complimentsPerLevel) % complimentsPerLevel;
         Serial.println(currentComplimentIndex);
         updateDisplay();
+        currentComplimentIndex = (currentComplimentIndex - 1 + complimentsPerLevel) % complimentsPerLevel;
         delay(200);
     }
 
     if (!isScrolling && digitalRead(btnNext) == LOW) {
-        currentComplimentIndex = (currentComplimentIndex + 1) % complimentsPerLevel;
         Serial.println(currentComplimentIndex);
         updateDisplay();
+        currentComplimentIndex = (currentComplimentIndex + 1) % complimentsPerLevel;
         delay(200);
     }
 
@@ -47,12 +46,12 @@ void updateDisplay() {
 void displayWrappedText(const char* text) {
     int len = strlen(text);
     char line1[17], line2[17];
-    memset(line1, ' ', 16); line1[16] = '\0';
-    memset(line2, ' ', 16); line2[16] = '\0';
+    memset(line1, '\0', 17);
+    memset(line2, '\0', 17);
     int line1Pos = 0, line2Pos = 0;
 
-    for (int pos = 0; pos < len; pos++) {
-        // Find the end of the current word
+    for (int pos = 0; pos < len; ) {
+        // Find the end of the current word or handle newline
         int wordEnd = pos;
         while (wordEnd < len && text[wordEnd] != ' ' && text[wordEnd] != '\n') {
             wordEnd++;
@@ -60,24 +59,24 @@ void displayWrappedText(const char* text) {
 
         // Check if the word fits in the current line
         int wordLen = wordEnd - pos;
-        if (line2Pos + wordLen > 16) {
-            // Shift line2 to line1 and clear line2
-            strncpy(line1, line2, 17);
-            memset(line2, ' ', 16); line2[16] = '\0';
+        if (line2Pos + wordLen >= 16) {
+            // Shift the contents of line 2 to line 1, and clear line 2
+            strcpy(line1, line2);
+            memset(line2, '\0', 17);
             line2Pos = 0;
         }
 
         // Print the word
         while (pos < wordEnd) {
             if (line2Pos < 16) {
-                line2[line2Pos++] = text[pos];
+                line2[line2Pos++] = text[pos++];
             }
-            pos++;
         }
 
         // Add a space after the word if there's space and it's not the end
-        if (line2Pos < 16 && pos < len) {
+        if (pos < len && line2Pos < 16) {
             line2[line2Pos++] = ' ';
+            pos++;
         }
 
         // Update the LCD

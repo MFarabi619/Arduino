@@ -12,16 +12,18 @@ const int btnNext = 9;
 const int btnLevel = 10;
 
 // Two-dimensional array for compliments
-const char* compliments[3][10] = {
-    {"You have a nice smile :)", "I like listening to you talk :)", "You have a really nice jacket.", "You have a really attractive laugh.", "It's fun being around you.", "You're a good listener.","You have really nice outfits."},
-    {"I find it hot that you used to dance.", "I really liked your top the first time we hung out :)", "You always smell really good.","Your Bengali accent is adorable :)", "You look good from every angle.", "I find it hot that you have ADHD."},
-    {"You have massive tits.", "I wonder if your hair will look as good after I pull it.","I think it's really hot that you're brown.", "Your neck looks delicious.", ""}
-};
+const char *compliments[3][10] = {
+    {"1. You have a really nice smile :)", "2. I really like listening to you talk, it's fun and easy to talk to you :)", "3. You have a really nice jacket.", "4. You have a really attractive laugh.", "5. It's fun being around you.", "6. You're a good listener.", "7. You have really nice outfits.", "8. You look good with earrings.", "9. I like your full name, it's unique and I've never heard it before."},
+    {"1. I find it hot that you dance.", "2. I really liked your top the first time we hung out :)", "3. You always smell really good.", "4. Your Bengali accent is adorable :)", "4. You look good from every angle.", "5. I find it hot that you have ADHD.", "6. I think it's hot that you speak Bengali."},
+    {"1. You have a nice rack.", "2. I wonder if your hair will look as good after I pull it.", "3. I think it's really hot that you're brown.", "4. Your neck looks delicious.", "5. Out of all your outfits, I think you'd look best in your birthday suit.", "6. They don't allow snacks at movies, how'd you get in while being a full course meal? ;)", "7. You should be Jasmine without the 'Jas' ;)", "8. I wonder which bed you'd look best in at IKEA ;)"}};
+
 const int levels = 3; // Total number of levels
-const int complimentsPerLevel = 7; // Compliments per level
+const int complimentsPerLevel = 9; // Compliments per level
 
 int currentLevel = 0;
 int currentComplimentIndex = 0;
 bool isScrolling = false;
+
+const int textDelay = 400; // Time in milliseconds to delay between words
 
 #endif // COMPLIMENT_GENERATOR.H
