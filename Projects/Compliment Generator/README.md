@@ -1,7 +1,7 @@
 A simple compliment generator given as a birthday gift.
 
 ## Live Demo
-No demo for this one :/
+No demo for this one as it's meant to be special :/
 
 ## Wiring Diagram
 
