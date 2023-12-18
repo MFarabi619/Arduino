@@ -1,7 +1,6 @@
 {
-    "board": "arduino:avr:mega",
+    "board": "arduino:avr:uno",
     "programmer": "avrispmkii",
-    "port": "COM9",
-    "sketch": "Projects\\Photocell\\Photocell.ino",
-    "configuration": "cpu=atmega2560"
+    "port": "COM8",
+    "sketch": "Projects\\Compliment Generator\\Compliment Generator.ino"
 }
